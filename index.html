@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Simone Ghezzi Colombo</title>
-  <meta name="description" content="Sociologist, Social Data Analyst, Computational Social Scientist, and Policy Data Analyst." />
+  <meta name="description" content="Policy Data Analyst, Sociologist, Social Data Analyst, and Computational Social Scientist." />
   <style>
     :root {
       --bg: #f7fbfb;
@@ -116,14 +116,22 @@
 
     .hero-subtitle {
       margin: 18px 0 0;
-      font-size: clamp(1.08rem, 1.9vw, 1.25rem);
+      font-size: clamp(1.1rem, 2vw, 1.28rem);
       color: #28454d;
       max-width: 34ch;
-      line-height: 1.4;
+      line-height: 1.35;
+    }
+
+    .hero-open {
+      margin: 12px 0 0;
+      color: var(--teal);
+      font-size: 0.96rem;
+      font-weight: 600;
+      max-width: 55ch;
     }
 
     .hero-copy {
-      margin-top: 22px;
+      margin-top: 20px;
       color: var(--muted);
       max-width: 64ch;
       font-size: 1rem;
@@ -296,33 +304,38 @@
       gap: 18px;
     }
 
-    .project {
+    .project,
+    .service {
       background: linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
       border: 1px solid var(--line);
       border-radius: 20px;
       padding: 22px;
       box-shadow: var(--shadow);
-      min-height: 250px;
       display: flex;
       flex-direction: column;
     }
 
-    .project-kind {
-      color: var(--teal);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 0.75rem;
-      margin-bottom: 8px;
-    }
+    .project { min-height: 250px; }
 
+    .service h3,
     .project h3 {
       margin: 0 0 10px;
       font-size: 1.12rem;
     }
 
+    .service p,
     .project p {
       margin: 0;
       color: var(--muted);
+    }
+
+    .project-kind,
+    .service-kind {
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.75rem;
+      margin-bottom: 8px;
     }
 
     .project-brand {
@@ -474,6 +487,11 @@
       font-weight: 600;
     }
 
+    .contact-note {
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
     .footer {
       padding: 28px 0 42px;
       color: var(--muted);
@@ -536,6 +554,10 @@
         font-size: 1rem;
       }
 
+      .hero-open {
+        font-size: 0.9rem;
+      }
+
       .hero-copy {
         margin-top: 18px;
         font-size: 0.96rem;
@@ -588,6 +610,7 @@
       }
 
       .project,
+      .service,
       .section-head p,
       .hero-copy,
       .plain-text p,
@@ -604,6 +627,7 @@
       <a class="brand" href="#home">Simone Ghezzi Colombo</a>
       <nav class="navlinks">
         <a href="#about">About</a>
+        <a href="#services">Services</a>
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
         <a href="#research">Research</a>
@@ -617,7 +641,8 @@
       <div>
         <div class="eyebrow">Political Sociology · Open Government Data · Computational Social Science</div>
         <h1>Simone<br />Ghezzi Colombo</h1>
-        <p class="hero-subtitle">Sociologist, Social Data Analyst, Computational Social Scientist, and Policy Data Analyst.</p>
+        <p class="hero-subtitle">Policy Data Analyst and computational social scientist.</p>
+        <p class="hero-open">Open to Policy Data Analyst, Research Data Analyst, and public-interest data roles · Italy-based (CET), remote EU.</p>
 
         <div class="title-stack">
           <span class="pill">Sociologist</span>
@@ -627,7 +652,7 @@
         </div>
 
         <p class="hero-copy">
-          I work at the intersection of political sociology, public-interest data, computational social science, and territorial policy analysis. My work combines quantitative research, reproducible workflows, geospatial thinking, and public-facing explanation to make complex political and social phenomena more rigorous, more explorable, and more usable.
+          I build reproducible data workflows and public-interest analytical tools to study inequality, political behaviour, and territorial access to services. My work combines quantitative research, documentation, geospatial thinking, and public-facing explanation to make complex social phenomena more rigorous, more explorable, and more usable.
         </p>
       </div>
 
@@ -671,6 +696,7 @@
         <div class="plain-text">
           <p>My interests include political behaviour, gender and generational cleavages, European politics, electoral data, welfare governance, territorial inequalities, open government data, and the translation of social research into public-facing tools.</p>
           <p>I combine theory, methods, and implementation: dataset harmonisation, reproducible workflows in R and Python, spatial analysis, data documentation, interactive outputs, and empirically grounded communication for research and policy contexts.</p>
+          <p>I focus especially on equity, inclusion, and the distributional consequences of policy.</p>
         </div>
 
         <div class="keylines">
@@ -687,6 +713,33 @@
             <span>Academic enough to be rigorous, practical enough to build, communicate, and maintain useful tools.</span>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="section-head">
+        <h2>What I can do</h2>
+        <p>Analytical support for policy, research, and public-interest infrastructure.</p>
+      </div>
+
+      <div class="grid three">
+        <article class="service">
+          <div class="service-kind">Evaluation</div>
+          <h3>Program evaluation</h3>
+          <p>Design indicators, structure datasets, build reproducible workflows, and interpret findings with attention to equity and implementation.</p>
+        </article>
+
+        <article class="service">
+          <div class="service-kind">Data infrastructure</div>
+          <h3>Public-interest data pipelines</h3>
+          <p>Clean, validate, document, and maintain research-grade or institutional datasets with transparent methodology and reusable outputs.</p>
+        </article>
+
+        <article class="service">
+          <div class="service-kind">Territory</div>
+          <h3>Territorial analysis</h3>
+          <p>Use geospatial and place-based analysis to study access to services, electoral patterns, territorial inequality, and local policy questions.</p>
+        </article>
       </div>
     </section>
 
@@ -713,12 +766,16 @@
 
         <article class="project">
           <div class="project-kind">Interactive research</div>
-          <h3>Master's Thesis</h3>
+          <h3>Gen Z gender political polarization</h3>
           <p>An interactive version of my thesis on masculinities, feminist mobilization, and the emerging gender divide in political attitudes among young Europeans across 27 EU member states.</p>
           <div class="tags">
             <span class="tag">EU27</span>
             <span class="tag">Gender Politics</span>
             <span class="tag">Interactive Analysis</span>
+          </div>
+          <div class="project-links">
+            <a href="https://simoneghezzicolombo.github.io/genz-gender-political-polarization/" target="_blank" rel="noreferrer">Live project ↗</a>
+            <a href="https://github.com/simoneghezzicolombo/genz-gender-political-polarization" target="_blank" rel="noreferrer">GitHub ↗</a>
           </div>
         </article>
 
@@ -735,7 +792,7 @@
             <span class="tag">Operations Design</span>
           </div>
           <div class="project-links">
-            <a href="https://bnbdellastazione.eu" target="_blank" rel="noreferrer">bnbdellastazione.eu ↗</a>
+            <a href="https://bnbdellastazione.eu" target="_blank" rel="noreferrer">Live project ↗</a>
           </div>
         </article>
       </div>
@@ -854,6 +911,7 @@
       <div class="contact-grid">
         <div class="plain-text">
           <p>I am interested in research collaborations, policy analysis, civic tech, public-interest infrastructure, European initiatives, and opportunities at the intersection of politics, computation, and social analysis.</p>
+          <p class="contact-note">Based in Italy (CET).</p>
         </div>
 
         <div class="linklist">
@@ -861,6 +919,7 @@
           <a href="https://www.linkedin.com/in/simoneghezzicolombo/" target="_blank" rel="noreferrer"><span>LinkedIn</span><span>Profile ↗</span></a>
           <a href="https://github.com/simoneghezzicolombo" target="_blank" rel="noreferrer"><span>GitHub</span><span>Profile ↗</span></a>
           <a href="https://electio-org.github.io/italia" target="_blank" rel="noreferrer"><span>Electio</span><span>Live project ↗</span></a>
+          <a href="https://simoneghezzicolombo.github.io/genz-gender-political-polarization/" target="_blank" rel="noreferrer"><span>Interactive thesis</span><span>Live project ↗</span></a>
           <a href="https://bnbdellastazione.eu" target="_blank" rel="noreferrer"><span>B&amp;B della Stazione</span><span>Live site ↗</span></a>
           <a href="cv.pdf" target="_blank" rel="noreferrer"><span>CV</span><span>Open PDF ↗</span></a>
         </div>
