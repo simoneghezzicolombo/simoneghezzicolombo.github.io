@@ -7,16 +7,17 @@
   <meta name="description" content="Sociologist, Social Data Analyst, Computational Social Scientist, and Policy Data Analyst." />
   <style>
     :root {
-      --bg: #0b1020;
-      --bg-soft: #111831;
-      --panel: rgba(18, 26, 49, 0.88);
-      --panel-2: rgba(14, 21, 40, 0.96);
-      --text: #edf2fb;
-      --muted: #aebbd4;
-      --line: rgba(255,255,255,0.08);
-      --accent: #d7e3ff;
-      --accent-2: #a9c2ff;
-      --shadow: 0 20px 60px rgba(0,0,0,0.28);
+      --bg: #f7fbfb;
+      --bg-soft: #eef7f6;
+      --surface: #ffffff;
+      --surface-2: #f3faf9;
+      --text: #17313a;
+      --muted: #60777d;
+      --line: #d8e7e5;
+      --teal: #177a74;
+      --teal-2: #3aa9a2;
+      --teal-soft: #dff3f0;
+      --shadow: 0 10px 30px rgba(23, 49, 58, 0.07);
       --radius: 22px;
       --max: 1120px;
     }
@@ -29,8 +30,8 @@
       color: var(--text);
       line-height: 1.65;
       background:
-        radial-gradient(circle at top right, rgba(169,194,255,0.10), transparent 24%),
-        linear-gradient(180deg, #090d17 0%, #0b1020 100%);
+        radial-gradient(circle at top right, rgba(58,169,162,0.11), transparent 22%),
+        linear-gradient(180deg, #fbfefd 0%, #f7fbfb 100%);
     }
 
     a { color: inherit; text-decoration: none; }
@@ -46,8 +47,8 @@
       top: 0;
       z-index: 50;
       backdrop-filter: blur(14px);
-      background: rgba(9,13,23,0.82);
-      border-bottom: 1px solid rgba(255,255,255,0.05);
+      background: rgba(247, 251, 251, 0.86);
+      border-bottom: 1px solid rgba(23, 49, 58, 0.06);
     }
 
     .nav {
@@ -72,61 +73,59 @@
 
     .navlinks a {
       color: var(--muted);
-      font-size: 0.94rem;
+      font-size: 0.95rem;
     }
 
-    .navlinks a:hover { color: var(--text); }
+    .navlinks a:hover { color: var(--teal); }
 
     .hero {
-      padding: 76px 0 34px;
+      padding: 72px 0 42px;
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 22px;
-      align-items: stretch;
+      grid-template-columns: 1.18fr 0.82fr;
+      gap: 34px;
+      align-items: center;
     }
-
-    .panel {
-      background: linear-gradient(180deg, var(--panel), var(--panel-2));
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-main { padding: 38px; }
-    .hero-side { padding: 24px; display: grid; gap: 14px; align-content: start; }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      color: var(--accent-2);
+      color: var(--teal);
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      font-size: 0.78rem;
+      font-size: 0.77rem;
       margin-bottom: 18px;
     }
 
     .eyebrow::before {
       content: "";
-      width: 24px;
+      width: 26px;
       height: 1px;
-      background: rgba(169,194,255,0.8);
+      background: linear-gradient(90deg, var(--teal), transparent);
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(2.8rem, 5.6vw, 5rem);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3rem, 5.8vw, 5.15rem);
       line-height: 0.95;
-      letter-spacing: -0.05em;
+      letter-spacing: -0.04em;
       max-width: 8ch;
     }
 
     .hero-subtitle {
       margin: 18px 0 0;
-      color: var(--accent);
-      font-size: clamp(1.04rem, 1.9vw, 1.22rem);
-      max-width: 36ch;
-      line-height: 1.38;
+      font-size: clamp(1.08rem, 1.9vw, 1.25rem);
+      color: #28454d;
+      max-width: 34ch;
+      line-height: 1.4;
+    }
+
+    .hero-copy {
+      margin-top: 22px;
+      color: var(--muted);
+      max-width: 64ch;
+      font-size: 1rem;
     }
 
     .title-stack {
@@ -139,17 +138,10 @@
     .pill {
       padding: 8px 12px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.03);
-      color: #dde7fb;
-      font-size: 0.86rem;
-    }
-
-    .hero-copy {
-      margin-top: 22px;
-      color: var(--muted);
-      max-width: 65ch;
-      font-size: 0.99rem;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      color: #2c4a52;
+      font-size: 0.88rem;
     }
 
     .actions {
@@ -166,41 +158,49 @@
       padding: 12px 17px;
       border-radius: 999px;
       border: 1px solid var(--line);
-      background: rgba(255,255,255,0.03);
+      background: var(--surface);
       font-weight: 600;
       font-size: 0.95rem;
+      color: #26434b;
     }
 
-    .btn:hover {
-      transform: translateY(-1px);
-      background: rgba(255,255,255,0.05);
-    }
-
+    .btn:hover { border-color: #b8d6d1; }
     .btn.primary {
-      background: rgba(169,194,255,0.10);
-      border-color: rgba(169,194,255,0.25);
+      background: linear-gradient(135deg, var(--teal) 0%, var(--teal-2) 100%);
+      color: white;
+      border-color: transparent;
+      box-shadow: 0 10px 24px rgba(23, 122, 116, 0.16);
     }
 
-    .portrait-card,
-    .stat,
-    .mini-card {
-      padding: 18px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.03);
-    }
-
-    .portrait-frame {
-      aspect-ratio: 1 / 1;
-      border-radius: 16px;
-      overflow: hidden;
-      background: linear-gradient(135deg, #162443, #0e1627);
-      border: 1px solid rgba(255,255,255,0.08);
+    .hero-side {
+      position: relative;
+      min-height: 360px;
       display: grid;
       place-items: center;
     }
 
-    .portrait-frame img {
+    .orb {
+      position: absolute;
+      inset: auto auto 24px 22px;
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(58,169,162,0.26), rgba(58,169,162,0.08) 58%, rgba(58,169,162,0) 70%);
+      filter: blur(2px);
+    }
+
+    .portrait-wrap {
+      position: relative;
+      width: min(100%, 340px);
+      aspect-ratio: 0.88 / 1;
+      border-radius: 32px;
+      background: linear-gradient(180deg, #f4fbfa 0%, #eaf6f4 100%);
+      border: 1px solid #d5e9e5;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .portrait-wrap img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -208,31 +208,25 @@
     }
 
     .portrait-fallback {
-      font-size: 2.4rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      color: #dce6fa;
+      position: absolute;
+      inset: 0;
       display: none;
+      place-items: center;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 3rem;
+      color: var(--teal);
+      background: linear-gradient(180deg, #f7fbfb, #edf8f6);
+      letter-spacing: 0.08em;
     }
 
     .portrait-note {
-      margin: 12px 0 0;
-      color: var(--muted);
+      margin-top: 14px;
       font-size: 0.88rem;
+      color: var(--muted);
+      text-align: center;
     }
 
-    .stat strong,
-    .mini-card strong {
-      display: block;
-      font-size: 1rem;
-      margin-bottom: 6px;
-      color: #e7eefc;
-    }
-
-    .stat span,
-    .mini-card span { color: var(--muted); font-size: 0.95rem; }
-
-    section { padding-top: 18px; margin-bottom: 18px; }
+    section { padding: 32px 0; }
 
     .section-head {
       display: flex;
@@ -244,35 +238,95 @@
 
     .section-head h2 {
       margin: 0;
-      font-size: clamp(1.5rem, 2vw, 1.95rem);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.55rem, 2.1vw, 2rem);
       letter-spacing: -0.03em;
     }
 
     .section-head p {
       margin: 0;
       color: var(--muted);
-      max-width: 60ch;
+      max-width: 58ch;
     }
 
-    .grid { display: grid; gap: 18px; }
-    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .about {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 34px;
+      align-items: start;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
 
-    .card {
-      padding: 24px;
-      border-radius: 20px;
-      background: linear-gradient(180deg, rgba(18,26,49,0.92), rgba(14,21,40,0.98));
+    .about p,
+    .plain-text p { color: var(--muted); margin: 0 0 14px; }
+
+    .keylines {
+      display: grid;
+      gap: 16px;
+    }
+
+    .keyline {
+      padding-left: 16px;
+      border-left: 3px solid var(--teal-soft);
+    }
+
+    .keyline strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--text);
+      font-size: 0.98rem;
+    }
+
+    .keyline span { color: var(--muted); }
+
+    .grid.three {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .project {
+      background: linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
       border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 22px;
       box-shadow: var(--shadow);
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
     }
 
-    .card h3 {
+    .project-kind {
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.75rem;
+      margin-bottom: 8px;
+    }
+
+    .project h3 {
       margin: 0 0 10px;
-      font-size: 1.08rem;
-      letter-spacing: -0.01em;
+      font-size: 1.12rem;
     }
 
-    .card p { margin: 0; color: var(--muted); }
+    .project p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .project-links {
+      margin-top: auto;
+      padding-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .project-links a {
+      color: var(--teal);
+      font-weight: 600;
+    }
 
     .tags {
       display: flex;
@@ -282,129 +336,121 @@
     }
 
     .tag {
-      padding: 7px 11px;
+      padding: 6px 10px;
       border-radius: 999px;
+      background: #f8fcfb;
+      border: 1px solid var(--line);
+      color: #3f5960;
       font-size: 0.84rem;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.03);
-      color: #dde7fb;
-    }
-
-    .project-card {
-      min-height: 290px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .project-kind {
-      color: var(--accent-2);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 0.76rem;
-      margin-bottom: 6px;
-    }
-
-    .project-links {
-      margin-top: auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .project-links a {
-      color: #e4edff;
-      font-weight: 600;
-      font-size: 0.95rem;
     }
 
     .split {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 18px;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 36px;
+      padding-top: 10px;
+      border-top: 1px solid var(--line);
     }
 
-    .timeline { display: grid; gap: 14px; }
+    .timeline {
+      display: grid;
+      gap: 20px;
+    }
 
     .timeline-item {
       display: grid;
       grid-template-columns: 132px 1fr;
       gap: 18px;
-      padding: 18px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.07);
-      background: rgba(255,255,255,0.025);
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
     }
 
     .timeline-date {
-      color: var(--accent-2);
+      color: var(--teal);
       font-size: 0.9rem;
       font-weight: 700;
+      padding-top: 2px;
     }
 
     .timeline-item h3 {
       margin: 0;
-      font-size: 1.02rem;
+      font-size: 1.03rem;
     }
 
     .timeline-item .role {
       margin-top: 4px;
-      color: #dce6fa;
+      color: #35535a;
       font-weight: 600;
       font-size: 0.95rem;
     }
 
     .timeline-item p {
-      margin: 12px 0 0;
+      margin: 10px 0 0;
       color: var(--muted);
     }
 
-    .list { display: grid; gap: 14px; }
+    .list {
+      display: grid;
+      gap: 16px;
+    }
 
     .list-item {
-      padding: 18px 20px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.07);
-      background: rgba(255,255,255,0.025);
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
     }
 
     .list-item strong {
       display: block;
       margin-bottom: 6px;
       font-size: 1rem;
-      color: #e5edff;
+      color: var(--text);
     }
 
-    .list-item span {
-      color: var(--muted);
-      font-size: 0.95rem;
+    .list-item span { color: var(--muted); }
+
+    .education {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+      padding-top: 8px;
+      border-top: 1px solid var(--line);
     }
 
-    .contact-card {
+    .contact {
+      padding: 28px 0 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-grid {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
-      gap: 18px;
-      padding: 28px;
+      gap: 30px;
+      align-items: start;
     }
 
-    .contact-links { display: grid; gap: 12px; }
+    .linklist {
+      display: grid;
+      gap: 10px;
+    }
 
-    .contact-links a {
+    .linklist a {
       display: flex;
       justify-content: space-between;
       gap: 14px;
-      padding: 14px 16px;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.07);
-      color: #dfe8fb;
-      font-size: 0.95rem;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+      color: #35535a;
+    }
+
+    .linklist a span:last-child {
+      color: var(--teal);
+      font-weight: 600;
     }
 
     .micro {
       color: var(--muted);
       font-size: 0.88rem;
-      margin-top: 14px;
+      margin-top: 16px;
     }
 
     .footer {
@@ -415,22 +461,39 @@
 
     code {
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.07);
+      background: #f3faf9;
+      border: 1px solid var(--line);
       padding: 2px 6px;
       border-radius: 8px;
-      color: #e5edff;
+      color: #35535a;
     }
 
     @media (max-width: 980px) {
-      .hero, .split, .contact-card, .grid.three, .grid.two { grid-template-columns: 1fr; }
+      .hero,
+      .about,
+      .split,
+      .education,
+      .contact-grid,
+      .grid.three {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 720px) {
-      .nav { align-items: flex-start; flex-direction: column; }
-      .hero-main, .hero-side, .card, .contact-card { padding: 22px; }
-      .timeline-item { grid-template-columns: 1fr; }
-      .section-head { flex-direction: column; align-items: flex-start; }
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
@@ -450,7 +513,7 @@
 
   <main class="shell">
     <section class="hero" id="home">
-      <article class="panel hero-main">
+      <div>
         <div class="eyebrow">Political Sociology · Open Government Data · Computational Social Science</div>
         <h1>Simone<br />Ghezzi Colombo</h1>
         <p class="hero-subtitle">Sociologist, Social Data Analyst, Computational Social Scientist, and Policy Data Analyst.</p>
@@ -472,64 +535,46 @@
           <a class="btn" href="https://github.com/simoneghezzicolombo" target="_blank" rel="noreferrer">GitHub</a>
           <a class="btn" href="mailto:simoneghezzi24@gmail.com">Email</a>
         </div>
-      </article>
+      </div>
 
-      <aside class="panel hero-side">
-        <div class="portrait-card">
-          <div class="portrait-frame">
+      <div class="hero-side">
+        <div class="orb"></div>
+        <div>
+          <div class="portrait-wrap">
             <img id="profile-photo" src="profile.jpg" alt="Portrait of Simone Ghezzi Colombo" />
             <div id="profile-fallback" class="portrait-fallback">SGC</div>
           </div>
-          <p id="portrait-note" class="portrait-note">Add a square portrait named <code>profile.jpg</code> in this repository root to replace the placeholder.</p>
+          <p id="portrait-note" class="portrait-note">Add a portrait named <code>profile.jpg</code> in the repository root to replace the placeholder.</p>
         </div>
-
-        <div class="stat">
-          <strong>Current focus</strong>
-          <span>Open government data, electoral analysis, political sociology, and data-driven public explanation.</span>
-        </div>
-        <div class="stat">
-          <strong>Flagship direction</strong>
-          <span>Research-grade infrastructure and public-facing tools for elections, territory, and social change.</span>
-        </div>
-        <div class="mini-card">
-          <strong>Profile fit</strong>
-          <span>Academic enough to be rigorous, practical enough to build, communicate, and maintain useful tools.</span>
-        </div>
-      </aside>
+      </div>
     </section>
 
     <section id="about">
       <div class="section-head">
         <h2>About</h2>
-        <p>A profile built across research, institutions, public-interest data, and real-world implementation.</p>
+        <p>A profile built across research, institutions, public-interest data, and practical implementation.</p>
       </div>
 
-      <div class="grid two">
-        <article class="card">
-          <h3>Research areas</h3>
+      <div class="about">
+        <div class="plain-text">
           <p>My interests include political behaviour, gender and generational cleavages, European politics, electoral data, welfare governance, territorial inequalities, open government data, and the translation of social research into public-facing tools.</p>
-          <div class="tags">
-            <span class="tag">Political Sociology</span>
-            <span class="tag">Electoral Analysis</span>
-            <span class="tag">Open Government Data</span>
-            <span class="tag">Computational Social Science</span>
-            <span class="tag">Geospatial Analysis</span>
-            <span class="tag">Policy Research</span>
-          </div>
-        </article>
-
-        <article class="card">
-          <h3>Methods & tools</h3>
           <p>I combine theory, methods, and implementation: dataset harmonisation, reproducible workflows in R and Python, spatial analysis, data documentation, interactive outputs, and empirically grounded communication for research and policy contexts.</p>
-          <div class="tags">
-            <span class="tag">R</span>
-            <span class="tag">Python</span>
-            <span class="tag">Stata</span>
-            <span class="tag">QGIS</span>
-            <span class="tag">Git</span>
-            <span class="tag">Data Documentation</span>
+        </div>
+
+        <div class="keylines">
+          <div class="keyline">
+            <strong>Current focus</strong>
+            <span>Open government data, electoral analysis, political sociology, and data-driven public explanation.</span>
           </div>
-        </article>
+          <div class="keyline">
+            <strong>Methods</strong>
+            <span>R, Python, Stata, QGIS, Git, reproducible research, documentation, and workflow design.</span>
+          </div>
+          <div class="keyline">
+            <strong>Profile fit</strong>
+            <span>Academic enough to be rigorous, practical enough to build, communicate, and maintain useful tools.</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -540,11 +585,9 @@
       </div>
 
       <div class="grid three">
-        <article class="card project-card">
-          <div>
-            <div class="project-kind">Flagship project</div>
-            <h3>Electio · Italia</h3>
-          </div>
+        <article class="project">
+          <div class="project-kind">Flagship project</div>
+          <h3>Electio · Italia</h3>
           <p>An electoral atlas of Italy designed to work both as a public-facing interface and as a serious data infrastructure: municipal-level exploration, methodological transparency, historical boundaries, and reusable electoral data.</p>
           <div class="tags">
             <span class="tag">Electoral Atlas</span>
@@ -556,11 +599,9 @@
           </div>
         </article>
 
-        <article class="card project-card">
-          <div>
-            <div class="project-kind">Interactive research</div>
-            <h3>Master's Thesis</h3>
-          </div>
+        <article class="project">
+          <div class="project-kind">Interactive research</div>
+          <h3>Master's Thesis</h3>
           <p>An interactive version of my thesis on masculinities, feminist mobilization, and the emerging gender divide in political attitudes among young Europeans across 27 EU member states.</p>
           <div class="tags">
             <span class="tag">EU27</span>
@@ -573,11 +614,9 @@
           </div>
         </article>
 
-        <article class="card project-card">
-          <div>
-            <div class="project-kind">Applied build</div>
-            <h3>B&B della Stazione</h3>
-          </div>
+        <article class="project">
+          <div class="project-kind">Applied build</div>
+          <h3>B&amp;B della Stazione</h3>
           <p>A custom digital operations system for a short-term rental project, including self check-in, token-based access control, cloud deployment, notifications, and payment integrations.</p>
           <div class="tags">
             <span class="tag">Python/Flask</span>
@@ -592,10 +631,11 @@
     </section>
 
     <section class="split" id="experience">
-      <article class="card">
+      <div>
         <div class="section-head">
           <h2>Experience</h2>
         </div>
+
         <div class="timeline">
           <div class="timeline-item">
             <div class="timeline-date">2025 — 2025</div>
@@ -605,6 +645,7 @@
               <p>Worked on the structuring, validation, documentation, and reproducible processing of institutional datasets, with a focus on data quality, interoperability, open data standards, and public value.</p>
             </div>
           </div>
+
           <div class="timeline-item">
             <div class="timeline-date">2022 — Present</div>
             <div>
@@ -613,6 +654,7 @@
               <p>Contributed to youth-oriented local policy, social planning, and public projects connected to inclusion, territorial analysis, and civic engagement.</p>
             </div>
           </div>
+
           <div class="timeline-item">
             <div class="timeline-date">2024 — Present</div>
             <div>
@@ -621,6 +663,7 @@
               <p>Co-founded a student-led European civic education initiative combining debates, workshops, institutional partnerships, and public exchanges on EU politics.</p>
             </div>
           </div>
+
           <div class="timeline-item">
             <div class="timeline-date">2022 — 2024</div>
             <div>
@@ -630,12 +673,13 @@
             </div>
           </div>
         </div>
-      </article>
+      </div>
 
-      <article class="card" id="research">
+      <div id="research">
         <div class="section-head">
           <h2>Research themes</h2>
         </div>
+
         <div class="list">
           <div class="list-item">
             <strong>Political behaviour and new cleavages</strong>
@@ -658,7 +702,7 @@
             <span>European integration, democratic participation, civic education, and institutional-public dialogue.</span>
           </div>
         </div>
-      </article>
+      </div>
     </section>
 
     <section>
@@ -666,52 +710,48 @@
         <h2>Education & presentations</h2>
         <p>A strong academic base with a public-facing research trajectory.</p>
       </div>
-      <div class="grid two">
-        <article class="card">
-          <h3>University of Milano-Bicocca</h3>
+
+      <div class="education">
+        <div class="plain-text">
+          <p><strong>University of Milano-Bicocca</strong></p>
           <p>Master's Degree in Programming and Management of Political and Social Services, completed with top marks and honors, with a quantitative thesis on gendered political attitudes among young Europeans.</p>
           <div class="tags">
             <span class="tag">Summa cum laude</span>
             <span class="tag">Quantitative Thesis</span>
             <span class="tag">EU Comparative Analysis</span>
           </div>
-        </article>
-        <article class="card">
-          <h3>Talks & conference trajectory</h3>
+        </div>
+
+        <div class="plain-text">
+          <p><strong>Talks & conference trajectory</strong></p>
           <p>Academic presentations and public talks on youth political participation, mobility, elections, and territorial policy, including conference and invited speaking experience.</p>
           <div class="tags">
             <span class="tag">Conference Work</span>
             <span class="tag">Public Speaking</span>
             <span class="tag">Research Communication</span>
           </div>
-        </article>
+        </div>
       </div>
     </section>
 
-    <section id="contact">
+    <section class="contact" id="contact">
       <div class="section-head">
         <h2>Contact & links</h2>
         <p>This section works as the public hub for your profile, projects, and collaborations.</p>
       </div>
 
-      <div class="panel contact-card">
-        <div>
-          <h3 style="margin-top:0; font-size:1.32rem;">Let’s connect</h3>
-          <p style="color: var(--muted); margin-top: 10px; max-width: 60ch;">I am interested in research collaborations, policy analysis, civic tech, public-interest infrastructure, European initiatives, and opportunities at the intersection of politics, computation, and social analysis.</p>
-          <div class="tags">
-            <span class="tag">Research collaborations</span>
-            <span class="tag">Policy analysis</span>
-            <span class="tag">Civic tech</span>
-            <span class="tag">Public-interest data</span>
-          </div>
+      <div class="contact-grid">
+        <div class="plain-text">
+          <p>I am interested in research collaborations, policy analysis, civic tech, public-interest infrastructure, European initiatives, and opportunities at the intersection of politics, computation, and social analysis.</p>
           <p class="micro">Next easy upgrades: upload <code>profile.jpg</code>, add your CV as <code>cv.pdf</code>, and replace the thesis placeholders with your live links.</p>
         </div>
-        <div class="contact-links">
+
+        <div class="linklist">
           <a href="mailto:simoneghezzi24@gmail.com"><span>Email</span><span>simoneghezzi24@gmail.com</span></a>
           <a href="https://www.linkedin.com/in/simoneghezzicolombo/" target="_blank" rel="noreferrer"><span>LinkedIn</span><span>Profile ↗</span></a>
           <a href="https://github.com/simoneghezzicolombo" target="_blank" rel="noreferrer"><span>GitHub</span><span>Profile ↗</span></a>
           <a href="https://electio-org.github.io/italia" target="_blank" rel="noreferrer"><span>Electio</span><span>Live project ↗</span></a>
-          <a href="https://bnbdellastazione.eu" target="_blank" rel="noreferrer"><span>B&B della Stazione</span><span>Live site ↗</span></a>
+          <a href="https://bnbdellastazione.eu" target="_blank" rel="noreferrer"><span>B&amp;B della Stazione</span><span>Live site ↗</span></a>
           <a href="#"><span>CV</span><span>Add cv.pdf ↗</span></a>
           <a href="#"><span>Interactive thesis</span><span>Add link ↗</span></a>
         </div>
@@ -732,7 +772,7 @@
 
     img.addEventListener('load', () => {
       fallback.style.display = 'none';
-      note.textContent = 'Portrait loaded. Keep it square, natural, and simple: neutral background, soft light, calm expression.';
+      note.textContent = 'Portrait loaded. Best result: neutral background, soft light, calm expression, square crop.';
     });
 
     img.addEventListener('error', () => {
