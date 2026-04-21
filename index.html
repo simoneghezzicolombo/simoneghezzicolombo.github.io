@@ -144,34 +144,6 @@
       font-size: 0.88rem;
     }
 
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 28px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 17px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: var(--surface);
-      font-weight: 600;
-      font-size: 0.95rem;
-      color: #26434b;
-    }
-
-    .btn:hover { border-color: #b8d6d1; }
-    .btn.primary {
-      background: linear-gradient(135deg, var(--teal) 0%, var(--teal-2) 100%);
-      color: white;
-      border-color: transparent;
-      box-shadow: 0 10px 24px rgba(23, 122, 116, 0.16);
-    }
-
     .hero-side {
       position: relative;
       min-height: 360px;
@@ -189,9 +161,15 @@
       filter: blur(2px);
     }
 
+    .portrait-block {
+      width: min(100%, 340px);
+      position: relative;
+      z-index: 1;
+    }
+
     .portrait-wrap {
       position: relative;
-      width: min(100%, 340px);
+      width: 100%;
       aspect-ratio: 0.88 / 1;
       border-radius: 32px;
       background: linear-gradient(180deg, #f4fbfa 0%, #eaf6f4 100%);
@@ -219,11 +197,46 @@
       letter-spacing: 0.08em;
     }
 
+    .photo-actions {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .icon-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.82);
+      border: 1px solid var(--line);
+      color: #26434b;
+      font-size: 0.92rem;
+      font-weight: 600;
+      box-shadow: 0 6px 18px rgba(23, 49, 58, 0.05);
+    }
+
+    .icon-btn:hover {
+      border-color: #b8d6d1;
+      color: var(--teal);
+    }
+
+    .icon-btn svg {
+      width: 16px;
+      height: 16px;
+      flex: 0 0 16px;
+      fill: currentColor;
+    }
+
     .portrait-note {
-      margin-top: 14px;
+      margin-top: 12px;
       font-size: 0.88rem;
       color: var(--muted);
-      text-align: center;
+      text-align: left;
     }
 
     section { padding: 32px 0; }
@@ -477,6 +490,10 @@
       .grid.three {
         grid-template-columns: 1fr;
       }
+
+      .hero-side {
+        place-items: start;
+      }
     }
 
     @media (max-width: 720px) {
@@ -528,22 +545,31 @@
         <p class="hero-copy">
           I work at the intersection of political sociology, public-interest data, computational social science, and territorial policy analysis. My work combines quantitative research, reproducible workflows, geospatial thinking, and public-facing explanation to make complex political and social phenomena more rigorous, more explorable, and more usable.
         </p>
-
-        <div class="actions">
-          <a class="btn primary" href="#projects">Selected projects</a>
-          <a class="btn" href="https://www.linkedin.com/in/simoneghezzicolombo/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="btn" href="https://github.com/simoneghezzicolombo" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="btn" href="mailto:simoneghezzi24@gmail.com">Email</a>
-        </div>
       </div>
 
       <div class="hero-side">
         <div class="orb"></div>
-        <div>
+        <div class="portrait-block">
           <div class="portrait-wrap">
             <img id="profile-photo" src="profile.jpg" alt="Portrait of Simone Ghezzi Colombo" />
             <div id="profile-fallback" class="portrait-fallback">SGC</div>
           </div>
+
+          <div class="photo-actions">
+            <a class="icon-btn" href="https://www.linkedin.com/in/simoneghezzicolombo/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5H3.56V20h3.38V8.5Zm.22-3.56c0-1.07-.8-1.94-1.92-1.94-1.13 0-1.93.87-1.93 1.94 0 1.06.79 1.93 1.9 1.93h.02c1.14 0 1.93-.87 1.93-1.93ZM20 13.01C20 9.52 18.14 8 15.66 8c-1.99 0-2.88 1.09-3.38 1.85V8.5H8.9c.05.89 0 11.5 0 11.5h3.38v-6.42c0-.34.02-.68.12-.92.27-.68.9-1.38 1.95-1.38 1.38 0 1.93 1.04 1.93 2.57V20H20v-6.99Z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a class="icon-btn" href="https://github.com/simoneghezzicolombo" target="_blank" rel="noreferrer" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12.02c0 5.1 3.3 9.42 7.88 10.95.58.1.79-.25.79-.56 0-.28-.01-1.2-.02-2.17-3.21.7-3.89-1.36-3.89-1.36-.52-1.34-1.28-1.69-1.28-1.69-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.97.11-.75.4-1.26.73-1.55-2.56-.29-5.26-1.28-5.26-5.72 0-1.27.46-2.31 1.2-3.13-.12-.29-.52-1.48.11-3.08 0 0 .98-.31 3.2 1.2a11.1 11.1 0 0 1 5.82 0c2.22-1.51 3.2-1.2 3.2-1.2.63 1.6.23 2.79.11 3.08.75.82 1.2 1.86 1.2 3.13 0 4.45-2.7 5.42-5.28 5.71.41.36.78 1.05.78 2.12 0 1.53-.01 2.76-.01 3.14 0 .31.21.67.8.55 4.57-1.53 7.86-5.85 7.86-10.94C23.5 5.65 18.35.5 12 .5Z"/></svg>
+              <span>GitHub</span>
+            </a>
+            <a class="icon-btn" href="mailto:simoneghezzi24@gmail.com" aria-label="Email">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5A2.5 2.5 0 0 1 5.5 3h13A2.5 2.5 0 0 1 21 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 18.5v-13Zm2 0v.37l7 5.44 7-5.44V5.5a.5.5 0 0 0-.5-.5h-13a.5.5 0 0 0-.5.5Zm14 2.9-6.39 4.97a1 1 0 0 1-1.22 0L5 8.4v10.1c0 .28.22.5.5.5h13a.5.5 0 0 0 .5-.5V8.4Z"/></svg>
+              <span>Email</span>
+            </a>
+          </div>
+
           <p id="portrait-note" class="portrait-note">Add a portrait named <code>profile.jpg</code> in the repository root to replace the placeholder.</p>
         </div>
       </div>
