@@ -328,6 +328,23 @@
       color: var(--muted);
     }
 
+    .project-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .project-brand img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      border-radius: 10px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      padding: 5px;
+    }
+
     .project-links {
       margin-top: auto;
       padding-top: 18px;
@@ -568,9 +585,13 @@
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5A2.5 2.5 0 0 1 5.5 3h13A2.5 2.5 0 0 1 21 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 18.5v-13Zm2 0v.37l7 5.44 7-5.44V5.5a.5.5 0 0 0-.5-.5h-13a.5.5 0 0 0-.5.5Zm14 2.9-6.39 4.97a1 1 0 0 1-1.22 0L5 8.4v10.1c0 .28.22.5.5.5h13a.5.5 0 0 0 .5-.5V8.4Z"/></svg>
               <span>Email</span>
             </a>
+            <a class="icon-btn" href="cv.pdf" target="_blank" rel="noreferrer" aria-label="CV">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5A2.5 2.5 0 0 0 4.5 6v12A2.5 2.5 0 0 0 7 20.5h10A2.5 2.5 0 0 0 19.5 18V8.12a2.5 2.5 0 0 0-.73-1.77l-2.62-2.62A2.5 2.5 0 0 0 14.38 3H7Zm7 1.5v3a1 1 0 0 0 1 1h3V18a.5.5 0 0 1-.5.5H7a.5.5 0 0 1-.5-.5V6a.5.5 0 0 1 .5-.5h7Zm-5.75 8.25h7.5v1.5h-7.5v-1.5Zm0-3.5h4.5v1.5h-4.5v-1.5Z"/></svg>
+              <span>CV</span>
+            </a>
           </div>
 
-          <p id="portrait-note" class="portrait-note">Add a portrait named <code>profile.jpg</code> in the repository root to replace the placeholder.</p>
+          <p id="portrait-note" class="portrait-note">Your photo and CV are live from the repository root. You can replace them anytime by uploading a new file with the same name: <code>profile.jpg</code> or <code>cv.pdf</code>.</p>
         </div>
       </div>
     </section>
@@ -642,7 +663,10 @@
 
         <article class="project">
           <div class="project-kind">Applied build</div>
-          <h3>B&amp;B della Stazione</h3>
+          <div class="project-brand">
+            <img src="logo-bnb.png" alt="B&amp;B della Stazione logo" />
+            <h3>B&amp;B della Stazione</h3>
+          </div>
           <p>A custom digital operations system for a short-term rental project, including self check-in, token-based access control, cloud deployment, notifications, and payment integrations.</p>
           <div class="tags">
             <span class="tag">Python/Flask</span>
@@ -769,7 +793,7 @@
       <div class="contact-grid">
         <div class="plain-text">
           <p>I am interested in research collaborations, policy analysis, civic tech, public-interest infrastructure, European initiatives, and opportunities at the intersection of politics, computation, and social analysis.</p>
-          <p class="micro">Next easy upgrades: upload <code>profile.jpg</code>, add your CV as <code>cv.pdf</code>, and replace the thesis placeholders with your live links.</p>
+          <p class="micro">Your public CV is now available at <code>/cv.pdf</code>. Next easy upgrade: replace the thesis placeholders with your live links.</p>
         </div>
 
         <div class="linklist">
@@ -778,7 +802,7 @@
           <a href="https://github.com/simoneghezzicolombo" target="_blank" rel="noreferrer"><span>GitHub</span><span>Profile ↗</span></a>
           <a href="https://electio-org.github.io/italia" target="_blank" rel="noreferrer"><span>Electio</span><span>Live project ↗</span></a>
           <a href="https://bnbdellastazione.eu" target="_blank" rel="noreferrer"><span>B&amp;B della Stazione</span><span>Live site ↗</span></a>
-          <a href="#"><span>CV</span><span>Add cv.pdf ↗</span></a>
+          <a href="cv.pdf" target="_blank" rel="noreferrer"><span>CV</span><span>Open PDF ↗</span></a>
           <a href="#"><span>Interactive thesis</span><span>Add link ↗</span></a>
         </div>
       </div>
@@ -798,7 +822,7 @@
 
     img.addEventListener('load', () => {
       fallback.style.display = 'none';
-      note.textContent = 'Portrait loaded. Best result: neutral background, soft light, calm expression, square crop.';
+      note.textContent = 'Photo loaded. To change it later, upload a new file with the same name: profile.jpg';
     });
 
     img.addEventListener('error', () => {
