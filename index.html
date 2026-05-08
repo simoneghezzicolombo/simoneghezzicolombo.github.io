@@ -304,6 +304,10 @@
       gap: 18px;
     }
 
+    .projects-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .project,
     .service {
       background: linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
@@ -749,7 +753,7 @@
         <p>A public-facing portfolio built around research, data infrastructure, and analytical tools.</p>
       </div>
 
-      <div class="grid three">
+      <div class="grid three projects-grid">
         <article class="project">
           <div class="project-kind">Flagship project</div>
           <h3>Electio · Italia</h3>
@@ -762,6 +766,21 @@
           <div class="project-links">
             <a href="https://electio-org.github.io/italia" target="_blank" rel="noreferrer">Live project ↗</a>
             <a href="https://github.com/Electio-org/italia" target="_blank" rel="noreferrer">GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-kind">Public-interest data</div>
+          <h3>S8 Milano-Lecco analysis</h3>
+          <p>A public repository and navigable data page on the S8 Lecco-Carnate-Milano rail corridor: ridership trends, station-level growth, peak/off-peak demand, figures, source datasets, and methodology for local policy discussion.</p>
+          <div class="tags">
+            <span class="tag">Public Transport</span>
+            <span class="tag">Open Data</span>
+            <span class="tag">Territorial Analysis</span>
+          </div>
+          <div class="project-links">
+            <a href="https://simoneghezzicolombo.github.io/s8-analisi/" target="_blank" rel="noreferrer">Live data page ↗</a>
+            <a href="https://github.com/simoneghezzicolombo/s8-analisi" target="_blank" rel="noreferrer">GitHub ↗</a>
           </div>
         </article>
 
@@ -920,6 +939,7 @@
           <a href="https://www.linkedin.com/in/simoneghezzicolombo/" target="_blank" rel="noreferrer"><span>LinkedIn</span><span>Profile ↗</span></a>
           <a href="https://github.com/simoneghezzicolombo" target="_blank" rel="noreferrer"><span>GitHub</span><span>Profile ↗</span></a>
           <a href="https://electio-org.github.io/italia" target="_blank" rel="noreferrer"><span>Electio</span><span>Live project ↗</span></a>
+          <a href="https://simoneghezzicolombo.github.io/s8-analisi/" target="_blank" rel="noreferrer"><span>S8 Milano-Lecco</span><span>Data page ↗</span></a>
           <a href="https://simoneghezzicolombo.github.io/genz-gender-political-polarization/" target="_blank" rel="noreferrer"><span>Interactive thesis</span><span>Live project ↗</span></a>
           <a href="https://bnbdellastazione.eu" target="_blank" rel="noreferrer"><span>B&amp;B della Stazione</span><span>Live site ↗</span></a>
           <a href="cv.pdf" target="_blank" rel="noreferrer"><span>CV</span><span>Open PDF ↗</span></a>
