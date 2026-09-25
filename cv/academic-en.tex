@@ -1,0 +1,156 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1.8cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{array}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.25em}
+\setlist[itemize]{leftmargin=1.2em,itemsep=0.2em,topsep=0.25em}
+
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\vspace{-0.35em}\titlerule]
+\titlespacing*{\section}{0pt}{1.0em}{0.45em}
+
+\newcommand{\nameheader}[3]{%
+  {\LARGE\bfseries #1}\\[0.35em]
+  #2 \enspace $\cdot$ \enspace \href{mailto:#3}{#3}\\[0.2em]
+}
+
+\newcommand{\cventry}[4]{%
+  \begin{tabularx}{\textwidth}{@{}Xr@{}}
+    {\textbf{#1}} & {#4}\\
+    {\emph{#2}} & {#3}
+  \end{tabularx}\vspace{0.2em}
+}
+
+\newcommand{\cvsubentry}[2]{%
+  \begin{tabularx}{\textwidth}{@{}Xr@{}}
+    {\textit{#1}} & {#2}
+  \end{tabularx}\vspace{0.15em}
+}
+
+\begin{document}
+
+\nameheader{Simone Ghezzi Colombo}{Italy}{simoneghezzi24@gmail.com}
+
+\section*{Education}
+
+\cventry{Incoming PhD student, Analysis of Social and Economic Processes (ASEP)}{University of Milano-Bicocca}{Milan, Italy}{Starts Nov 2026}
+Research interests: social and economic processes, inequality, local welfare, and quantitative methods.
+
+\cventry{M.A. in Programming and Management of Social Policies and Services}{University of Milano-Bicocca}{Milan, Italy}{Oct 2023 -- Oct 2025}
+Final grade: 110/110 \emph{cum laude}; GPA: 30.09/30. Thesis: \emph{Masculinities, Feminist Mobilization and the New Cultural Divide: A Quantitative Analysis of Gendered Political Attitudes Among Young Europeans.}
+\begin{itemize}
+  \item Built an original EU27 comparative dataset by harmonizing ESS Round 11 (2023--2024) and EES 2024 microdata, linking vote choice to CHES 2024 expert-coded party positions through a manually validated party-ID crosswalk.
+  \item Designed a reproducible R workflow for data preparation, cohort trends, country comparisons, and multivariate modelling, with documented harmonization procedures, diagnostics, and version control.
+  \item Produced figures and EU maps using centred rolling windows, LOESS smoothing, confidence intervals, and transparent trimming rules to reduce instability and outlier influence.
+\end{itemize}
+
+\textbf{Selected coursework research}
+\begin{itemize}
+  \item \textbf{Planning and Project Management:} designed an evidence-based intervention on youth-related challenges in Brianza using Project Cycle Management, Stata, and QGIS.
+  \item \textbf{Globalization and Local Development:} conducted a comparative analysis of post-socialist EU member states using R, Python, Eurostat, ARDECO, and QGIS to map regional disparities.
+  \item \textbf{Quantitative Analysis of Social Phenomena:} used Stata to analyse ISSP 2019 \emph{Social Inequality V}, studying the relationship between subjective class position and future expectations.
+  \item \textbf{Welfare and Public Action:} examined the political dimensions of local welfare governance, with a focus on technicization, depoliticization, and democratic control.
+  \item \textbf{Processes of European Integration:} explored the relationship between English proficiency, social media use, and European identity among young Europeans.
+  \item \textbf{Social Change, New Social Risks and Social Innovation in Europe:} conducted a survey experiment on welfare chauvinism among students at the University of Milano-Bicocca.
+  \item \textbf{Social Planning:} evaluated Free-Fare Public Transport policies through comparative case studies and literature review.
+  \item \textbf{Systems of Family Solidarity:} analysed the geography of gender-based violence through cross-cultural and cross-national comparison.
+\end{itemize}
+
+\cventry{Erasmus Exchange Semester}{Universit\"at Konstanz}{Konstanz, Germany}{Sep 2020 -- Mar 2021}
+\begin{itemize}
+  \item \textbf{The Social Neuroscience of Empathy:} analysed altruistic punishment and empathic anger in contexts of unfair treatment.
+  \item \textbf{European Integration Theories:} examined the 2020 shift in Italian politics from populist Euroscepticism to pro-European technocracy through a post-functionalist lens.
+\end{itemize}
+
+\cventry{B.A. in Sociology}{University of Milano-Bicocca}{Milan, Italy}{Sep 2019 -- Oct 2022}
+Final grade: 110/110 \emph{cum laude}. Thesis: \emph{Queer Migration: The Role of Sexuality in Moving to a Foreign Country.}
+\begin{itemize}
+  \item Conducted research on studentification in European cities through a comparative analysis of Loughborough and Urbino.
+  \item Investigated the role of social media in youth socialization through interviews and qualitative analysis.
+  \item Developed a qualitative research project on queer migration, focusing on sexuality, mobility decisions, and post-relocation experiences.
+\end{itemize}
+
+\section*{Professional Experience}
+
+\cventry{Open Data Observatory -- internship}{Department of Sociology and Social Research, University of Milano-Bicocca}{Milan, Italy}{Apr 2025 -- Jul 2025}
+\begin{itemize}
+  \item Contributed to the structuring, validation, and documentation of institutional datasets.
+  \item Developed reproducible data pipelines in R and Git, ensuring methodological rigor, version control, and compliance with open-data standards.
+  \item Assessed data quality, completeness, and interoperability across institutional sources to support policymaking and research.
+\end{itemize}
+
+\cventry{President of the Youth Council}{Municipality of Olgiate Molgora}{Olgiate Molgora, Italy}{Jul 2022 -- Present}
+\begin{itemize}
+  \item Coordinated educational street-art projects and developed a proposal to turn a local park into a social space for young people.
+  \item Organized public initiatives and opportunities for community participation.
+\end{itemize}
+
+\cventry{Co-founder and Organizer}{EUatSchool}{Merate, Italy}{Feb 2024 -- Present}
+\begin{itemize}
+  \item Co-founded a non-partisan, student-led European civic education initiative. Its third edition engaged more than 300 upper-secondary students and over 20 young volunteers in direct exchanges with Italian and European institutions.
+  \item Helped secure the patronage of the European Parliament and the European Commission Representation in Italy, together with support from local institutions, schools, and civil-society partners.
+  \item Organized and moderated exchanges with MEPs and senators, and coordinated workshops and public debates on European integration, foreign policy, defence, energy, AI, and the digital euro.
+\end{itemize}
+
+\cventry{Project Coordinator}{EVOLVO SRL}{Milan, Italy}{Dec 2022 -- Jun 2024}
+\begin{itemize}
+  \item Managed communication with European partners, colleagues, and Erasmus+ National Agencies.
+  \item Coordinated more than 100 Erasmus+ projects annually through structured information management and documentation.
+  \item Organized multi-day team-building events for international groups and delivered orientations to more than 1,000 participants per year.
+\end{itemize}
+
+\cventry{Civil Servant}{Italian Red Cross}{Olgiate Molgora, Italy}{Apr 2021 -- Apr 2022}
+\begin{itemize}
+  \item Coordinated dialogue with municipalities, hospitals, and health institutions to support local service delivery and operational planning.
+  \item Helped manage health and social services and coordinate more than 200 active volunteers.
+\end{itemize}
+
+\section*{Papers, Talks, and Academic Presentations}
+
+\cventry{Paper accepted for presentation at the ECPR General Conference 2026}{European Consortium for Political Research (ECPR)}{Krak\'ow, Poland}{Sep 2026}
+Single-authored paper accepted in the panel \emph{Gender, Democracy, and the Menace of Authoritarianism}. Paper title: \emph{From Gap to Cleavage: Gender Polarization Among Gen Z in the EU.}
+
+\cventry{Invited guest lecture on youth political participation in Europe}{Department of Sociology and Social Research, University of Milano-Bicocca}{Milan, Italy}{Mar 2026}
+Invited by Prof.~Tatjana Sekuli\'c to lecture in the Master's course \emph{Le Dinamiche delle Integrazioni Europee} (PROGEST, a.y.~2025/2026), presenting original research based on the Master's thesis.
+
+\cventry{Speaker and co-organiser, public seminar on mobility and public transport}{Viviamo Merate}{Merate, Italy}{May 2026}
+Presented an original analysis of the S8 suburban railway line, focusing on service evolution, passenger growth, and the role of rail in regional mobility planning.
+
+\section*{Awards and Recognition}
+
+\cventry{Selected as one of six thesis presenters, 3rd Convivio Progest 2026}{Department of Sociology and Social Research, University of Milano-Bicocca}{Milan, Italy}{Mar 2026}
+Selected among six Master's graduates invited to present thesis research at a departmental event showcasing outstanding theses discussed in the previous 18 months.
+
+\section*{Research Projects}
+
+\cventry{Computational analysis of Italian parliamentary elections at municipal level}{Independent / GitHub-based research infrastructure}{Italy}{Mar 2026 -- Present}
+\begin{itemize}
+  \item Developing a reproducible and well-documented dataset for the study of electoral behaviour, territorial variation, and political competition.
+  \item Implementing validation pipelines, derived indicators, and structured access tools for quantitative and computational social-science research.
+  \item Building outputs that make political data explorable and reusable for future comparative work across countries, institutions, and political contexts.
+\end{itemize}
+
+\section*{Skills}
+
+\textbf{Methods and tools:} R, Python, Stata, QGIS, Git/GitHub, data harmonization, reproducible workflows, quantitative analysis, survey research, comparative research, spatial analysis.\\
+\textbf{Languages:} Italian (native), English (C2), Spanish (B1).
+
+\section*{Academic and Civic Service}
+
+\cventry{Volunteer and community organizer}{Italian Red Cross and local civic initiatives}{Olgiate Molgora, Italy}{Apr 2021 -- Present}
+\begin{itemize}
+  \item Coordinate community-based educational and social initiatives, including food and school-supply drives, activities for older adults, and inclusive events for children and families.
+  \item Contribute to project planning, institutional communication, sponsorship requests, funding applications, and relations with local stakeholders.
+\end{itemize}
+
+\end{document}

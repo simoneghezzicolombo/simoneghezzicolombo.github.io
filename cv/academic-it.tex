@@ -1,0 +1,158 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1.8cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{array}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.25em}
+\setlist[itemize]{leftmargin=1.2em,itemsep=0.2em,topsep=0.25em}
+
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\vspace{-0.35em}\titlerule]
+\titlespacing*{\section}{0pt}{1.0em}{0.45em}
+
+\newcommand{\nameheader}[3]{%
+  {\LARGE\bfseries #1}\\[0.35em]
+  #2 \enspace $\cdot$ \enspace \href{mailto:#3}{#3}\\[0.2em]
+}
+
+\newcommand{\cventry}[4]{%
+  \begin{tabularx}{\textwidth}{@{}Xr@{}}
+    {\textbf{#1}} & {#4}\\
+    {\emph{#2}} & {#3}
+  \end{tabularx}\vspace{0.2em}
+}
+
+\newcommand{\cvsubentry}[2]{%
+  \begin{tabularx}{\textwidth}{@{}Xr@{}}
+    {\textit{#1}} & {#2}
+  \end{tabularx}\vspace{0.15em}
+}
+
+\begin{document}
+
+\nameheader{Simone Ghezzi Colombo}{Italia}{simoneghezzi24@gmail.com}
+
+\section*{Formazione}
+
+\cventry{Dottorando in ingresso, Analysis of Social and Economic Processes (ASEP)}{Università degli Studi di Milano-Bicocca}{Milano, Italia}{Inizio: nov 2026}
+Interessi di ricerca: processi sociali ed economici, disuguaglianze, welfare locale e metodi quantitativi.
+
+\cventry{Laurea magistrale in Programmazione e gestione delle politiche e dei servizi sociali}{Università degli Studi di Milano-Bicocca}{Milano, Italia}{Ott 2023 -- Ott 2025}
+Voto finale: 110/110 e lode; media: 30,09/30. Tesi: \emph{Mascolinità, mobilitazione femminista e la nuova frattura culturale: un'analisi quantitativa degli atteggiamenti politici di genere tra i giovani europei.}
+\begin{itemize}
+  \item Ho costruito un dataset comparativo dei 27 Paesi UE armonizzando ESS Round 11 (2023--2024) ed EES 2024 e collegando il voto alle posizioni dei partiti codificate in CHES 2024 tramite una tabella di corrispondenza verificata manualmente.
+  \item Ho sviluppato un flusso di lavoro riproducibile in R per preparazione dei dati, analisi delle coorti, confronti tra Paesi e modelli multivariati, documentando armonizzazione, controlli e versionamento.
+  \item Ho prodotto grafici e mappe UE con medie mobili centrate, smoothing LOESS, intervalli di confidenza e criteri di esclusione trasparenti per ridurre instabilità e influenza dei valori estremi.
+\end{itemize}
+
+\textbf{Ricerche selezionate durante il corso di studi}
+\begin{itemize}
+  \item \textbf{Programmazione e gestione dei progetti:} intervento su bisogni giovanili in Brianza basato su evidenze, Project Cycle Management, Stata e QGIS.
+  \item \textbf{Globalizzazione e sviluppo locale:} analisi comparativa degli Stati UE post-socialisti con R, Python, Eurostat, ARDECO e QGIS per rappresentare i divari regionali.
+  \item \textbf{Analisi quantitativa dei fenomeni sociali:} analisi in Stata dei dati ISSP 2019 \emph{Social Inequality V} sulla relazione tra classe sociale percepita e aspettative future.
+  \item \textbf{Welfare e azione pubblica:} studio delle dimensioni politiche del governo del welfare locale, con attenzione a tecnicizzazione, depoliticizzazione e controllo democratico.
+  \item \textbf{Processi di integrazione europea:} ricerca su competenza in inglese, uso dei social media e identità europea tra i giovani.
+  \item \textbf{Cambiamento sociale e innovazione in Europa:} esperimento di survey sul welfare chauvinism tra studenti dell'Università di Milano-Bicocca.
+  \item \textbf{Progettazione sociale:} valutazione delle politiche di trasporto pubblico gratuito mediante casi comparati e revisione della letteratura.
+  \item \textbf{Sistemi di solidarietà familiare:} analisi comparativa della geografia della violenza di genere.
+\end{itemize}
+
+\cventry{Semestre Erasmus}{Universität Konstanz}{Costanza, Germania}{Set 2020 -- Mar 2021}
+\begin{itemize}
+  \item \textbf{Neuroscienze sociali dell'empatia:} analisi di punizione altruistica e rabbia empatica in situazioni di ingiustizia.
+  \item \textbf{Teorie dell'integrazione europea:} studio della svolta politica italiana del 2020 dall'euroscetticismo populista a posizioni europeiste mediante un approccio post-funzionalista.
+\end{itemize}
+
+\cventry{Laurea triennale in Sociologia}{Università degli Studi di Milano-Bicocca}{Milano, Italia}{Set 2019 -- Ott 2022}
+Voto finale: 110/110 e lode. Tesi: \emph{Migrazione queer: il ruolo della sessualità nella scelta di trasferirsi all'estero.}
+\begin{itemize}
+  \item Ricerca comparativa sulla studentificazione delle città europee, con casi di Loughborough e Urbino.
+  \item Interviste e analisi qualitativa sul ruolo dei social media nella socializzazione giovanile.
+  \item Progetto qualitativo sulla migrazione queer, dalle decisioni di mobilità alle esperienze dopo il trasferimento.
+\end{itemize}
+
+\section*{Esperienze professionali}
+
+\cventry{Tirocinio -- Open Data Observatory}{Dipartimento di Sociologia e Ricerca Sociale, Università di Milano-Bicocca}{Milano, Italia}{Apr 2025 -- Lug 2025}
+\begin{itemize}
+  \item Ho contribuito a strutturare, validare e documentare dataset istituzionali.
+  \item Ho costruito pipeline riproducibili in R e Git, documentando metodo e versioni.
+  \item Ho verificato qualità, completezza e interoperabilità delle fonti a supporto della ricerca e delle decisioni pubbliche.
+\end{itemize}
+
+\cventry{Presidente della Consulta Giovani}{Comune di Olgiate Molgora}{Olgiate Molgora, Italia}{Lug 2022 -- oggi}
+\begin{itemize}
+  \item Collaboro con l'Ambito distrettuale sociale di Merate, Retesalute e altri soggetti locali sulle politiche giovanili.
+  \item Ho coordinato interventi di street art educativa, sviluppato una proposta per trasformare un parchetto in spazio sociale per i giovani e organizzato iniziative e momenti di partecipazione pubblica.
+\end{itemize}
+
+\cventry{Co-fondatore e organizzatore}{EUatSchool}{Merate, Italia}{Feb 2024 -- oggi}
+\begin{itemize}
+  \item Ho co-fondato un'iniziativa apartitica di educazione civica europea. La terza edizione ha coinvolto oltre 300 studenti, più di 20 giovani volontari e rappresentanti delle istituzioni italiane ed europee.
+  \item Ho contribuito a ottenere l'alto patrocinio del Parlamento europeo e il patrocinio della Rappresentanza della Commissione europea in Italia.
+  \item Ho organizzato incontri, dibattiti e confronti diretti per avvicinare l'Unione europea al mondo della scuola.
+\end{itemize}
+
+\cventry{Coordinatore di progetti}{EVOLVO SRL}{Milano, Italia}{Dic 2022 -- Giu 2024}
+\begin{itemize}
+  \item Ho curato la comunicazione con partner europei, colleghi e Agenzie nazionali Erasmus+.
+  \item Ho coordinato la documentazione di oltre 100 progetti Erasmus+ all'anno e organizzato eventi per gruppi internazionali.
+  \item Ho tenuto orientamenti per oltre 1.000 partecipanti all'anno e svolto attività di ricerca di mercato.
+\end{itemize}
+
+\cventry{Operatore di servizio civile}{Croce Rossa Italiana -- Comitato di Merate}{Olgiate Molgora, Italia}{Apr 2021 -- Apr 2022}
+\begin{itemize}
+  \item Ho supportato il dialogo con Comuni, ospedali e istituzioni sanitarie e la pianificazione operativa del Comitato.
+  \item Ho collaborato alla gestione delle attività sociali e sociosanitarie e al coordinamento di oltre 200 volontari attivi.
+\end{itemize}
+
+\newpage
+\section*{Pubblicazioni e presentazioni accademiche}
+
+\cventry{Paper a firma singola accettato alla General Conference ECPR 2026}{European Consortium for Political Research}{Cracovia, Polonia}{Set 2026}
+Paper accettato nel panel \emph{Gender, Democracy, and the Menace of Authoritarianism}: \emph{From Gap to Cleavage: Gender Polarization Among Gen Z in the EU.}
+
+\cventry{Lezione su invito sulla partecipazione politica giovanile in Europa}{Dipartimento di Sociologia e Ricerca Sociale, Università di Milano-Bicocca}{Milano, Italia}{Mar 2026}
+Invitato dalla prof.ssa Tatjana Sekulić nel corso magistrale \emph{Le Dinamiche delle Integrazioni Europee} (PROGEST, a.a.~2025/2026) a presentare la ricerca derivata dalla tesi.
+
+\cventry{Relatore e co-organizzatore, seminario pubblico sulla mobilità}{Viviamo Merate}{Merate, Italia}{Mag 2026}
+Ho presentato un'analisi originale della linea suburbana S8 su evoluzione del servizio, crescita dei passeggeri e pianificazione della mobilità regionale.
+
+\section*{Riconoscimenti}
+
+\cventry{Tesi selezionata, terzo Convivio PROGEST}{Dipartimento di Sociologia e Ricerca Sociale, Università di Milano-Bicocca}{Milano, Italia}{Mar 2026}
+Uno dei sei laureati invitati a presentare la propria ricerca in un evento dipartimentale dedicato alle migliori tesi discusse nei 18 mesi precedenti.
+
+\section*{Progetti di ricerca}
+
+\cventry{Electio: analisi computazionale delle elezioni italiane a livello comunale}{Infrastruttura di ricerca indipendente, pubblicata su GitHub}{Italia}{Mar 2026 -- oggi}
+\begin{itemize}
+  \item Sviluppo un dataset riproducibile e documentato per studiare comportamento elettorale, variazione territoriale e competizione politica.
+  \item Realizzo controlli di validità, indicatori derivati e strumenti di accesso per la ricerca sociale quantitativa e computazionale.
+  \item Pubblico risultati esplorabili e riutilizzabili per futuri confronti tra territori, elezioni e istituzioni.
+\end{itemize}
+
+\section*{Competenze}
+
+\textbf{Metodi e strumenti:} R, Python, Stata, QGIS, Git/GitHub, armonizzazione dei dati, flussi di lavoro riproducibili, analisi quantitativa, survey research, ricerca comparativa e analisi spaziale.\\
+\textbf{Lingue:} italiano (madrelingua), inglese (C2), spagnolo (B1).
+
+\section*{Impegno civico}
+
+\cventry{Volontario e organizzatore di iniziative comunitarie}{Croce Rossa Italiana e iniziative civiche locali}{Olgiate Molgora, Italia}{Apr 2021 -- oggi}
+\begin{itemize}
+  \item Organizzo iniziative educative e sociali, raccolte di beni e attività inclusive per bambini, famiglie e anziani.
+  \item Contribuisco a progettazione, comunicazione istituzionale, richieste di sostegno e relazioni con gli attori locali.
+  \item Supporto comunicazione pubblica e trasporti sanitari protetti per persone vulnerabili.
+\end{itemize}
+
+\end{document}
