@@ -1,0 +1,1794 @@
+{
+  "schemaVersion": 1,
+  "generatedOn": "2026-07-13",
+  "purpose": "Compact, embed-safe source data for four uniform portfolio mini-interactions.",
+  "repositories": {
+    "electio": {
+      "repo": "Electio-org/italia",
+      "commit": "4c9f2ed46cc749469fd645e438e82cb82c040753",
+      "commitDate": "2026-07-13T17:40:38Z",
+      "sourcePaths": [
+        "data/derived/summary_by_election/assemblea_costituente_1946.csv",
+        "data/derived/summary_by_election/camera_1992.csv",
+        "data/derived/summary_by_election/camera_2022.csv"
+      ],
+      "note": "The current turnout map uses five municipal quantile classes, not the older continuous gradient."
+    },
+    "s8": {
+      "repo": "simoneghezzicolombo/s8-analisi",
+      "commit": "c7b273261966e5cd19042e07843c501d716b7538",
+      "sourcePath": "data/processed/stazioni_s8_indice_2015_2025.csv"
+    },
+    "schools": {
+      "repo": "simoneghezzicolombo/indice-territoriale-scuole-superiori",
+      "commit": "87fd120b5458300b53facef231d7f60157db7a3c",
+      "sourcePath": "public/data/indice-comuni.json"
+    },
+    "genz": {
+      "repo": "simoneghezzicolombo/genz-gender-political-polarization",
+      "commit": "01651824f99bca615796e5944cd6c120b606add7",
+      "sourcePath": "data/interactive/phase1/fig12_lr_by_year_gender.json",
+      "sourceTraceIndices": {
+        "femaleSmoothed": 6,
+        "maleSmoothed": 7
+      }
+    }
+  },
+  "electio": {
+    "metric": "turnoutPct",
+    "turnoutScale": {
+      "type": "five-quantile-thresholds",
+      "thresholdPositions": [
+        0.2,
+        0.4,
+        0.6,
+        0.8
+      ],
+      "interpolationStart": "#f8fafc",
+      "interpolationEnd": "#167d75",
+      "classSampleStops": [
+        0.12,
+        0.325,
+        0.53,
+        0.735,
+        0.94
+      ],
+      "classColors": [
+        "#ddebec",
+        "#afd1d0",
+        "#80b8b4",
+        "#529e99",
+        "#24857d"
+      ],
+      "noDataColor": "#d4d9d7"
+    },
+    "elections": [
+      {
+        "key": "assemblea_costituente_1946",
+        "label": {
+          "it": "Assemblea Costituente 1946",
+          "en": "Constituent Assembly 1946"
+        },
+        "municipalCount": 7148,
+        "turnoutDistribution": {
+          "method": "linear quantiles across municipalities, matching Electio app quantileFromSorted",
+          "min": 45.072046,
+          "p20": 87.292754,
+          "p40": 90.228573,
+          "p60": 92.365067,
+          "p80": 94.231103,
+          "max": 99.827586
+        },
+        "national": {
+          "turnoutPct": 89.097131,
+          "electors": 27734646,
+          "voters": 24710774
+        },
+        "places": {
+          "Olgiate Molgora": null,
+          "Merate": {
+            "municipalityId": "097048",
+            "name": "Merate",
+            "province": "Como",
+            "region": "Lombardia",
+            "turnoutPct": 95.60545000959509,
+            "electors": 5211,
+            "voters": 4982,
+            "firstParty": "DC",
+            "firstPartyShare": 56.35021097046413,
+            "secondParty": "Psiup",
+            "secondPartyShare": 27.72151898734177,
+            "firstSecondMargin": 28.628691983122362
+          },
+          "Milano": {
+            "municipalityId": "015146",
+            "name": "Milano",
+            "province": "Milano",
+            "region": "Lombardia",
+            "turnoutPct": 85.65113515861557,
+            "electors": 860981,
+            "voters": 737440,
+            "firstParty": "Psiup",
+            "firstPartyShare": 34.0760144443108,
+            "secondParty": "DC",
+            "secondPartyShare": 26.38855867371913,
+            "firstSecondMargin": 7.687455770591669
+          },
+          "Roma": {
+            "municipalityId": "058091",
+            "name": "Roma",
+            "province": "Roma",
+            "region": "Lazio",
+            "turnoutPct": 80.79783045200978,
+            "electors": 970156,
+            "voters": 783865,
+            "firstParty": "DC",
+            "firstPartyShare": 29.537640429681687,
+            "secondParty": "Pri",
+            "secondPartyShare": 13.930299808747826,
+            "firstSecondMargin": 15.607340620933861
+          }
+        }
+      },
+      {
+        "key": "camera_1992",
+        "label": {
+          "it": "Camera 1992",
+          "en": "Chamber 1992"
+        },
+        "municipalCount": 8063,
+        "turnoutDistribution": {
+          "method": "linear quantiles across municipalities, matching Electio app quantileFromSorted",
+          "min": 5.108696,
+          "p20": 80.060494,
+          "p40": 86.91065,
+          "p60": 90.570386,
+          "p80": 93.156581,
+          "max": 100
+        },
+        "national": {
+          "turnoutPct": 87.347783,
+          "electors": 47251893,
+          "voters": 41273481
+        },
+        "places": {
+          "Olgiate Molgora": {
+            "municipalityId": "097058",
+            "name": "Olgiate Molgora",
+            "province": "Como",
+            "region": "Lombardia",
+            "turnoutPct": 93.4918070620817,
+            "electors": 4333,
+            "voters": 4051,
+            "firstParty": "DC",
+            "firstPartyShare": 30.98883986504023,
+            "secondParty": "Lega",
+            "secondPartyShare": 30.39190241370361,
+            "firstSecondMargin": 0.5969374513366219
+          },
+          "Merate": {
+            "municipalityId": "097048",
+            "name": "Merate",
+            "province": "Como",
+            "region": "Lombardia",
+            "turnoutPct": 95.5615391296795,
+            "electors": 11513,
+            "voters": 11002,
+            "firstParty": "DC",
+            "firstPartyShare": 28.913843540624708,
+            "secondParty": "Lega",
+            "secondPartyShare": 27.413418892139283,
+            "firstSecondMargin": 1.5004246484854242
+          },
+          "Milano": {
+            "municipalityId": "015146",
+            "name": "Milano",
+            "province": "Milano",
+            "region": "Lombardia",
+            "turnoutPct": 88.17671221670325,
+            "electors": 1210171,
+            "voters": 1067089,
+            "firstParty": "Lega",
+            "firstPartyShare": 20.43596492588228,
+            "secondParty": "DC",
+            "secondPartyShare": 16.27130109160826,
+            "firstSecondMargin": 4.16466383427402
+          },
+          "Roma": {
+            "municipalityId": "058091",
+            "name": "Roma",
+            "province": "Roma",
+            "region": "Lazio",
+            "turnoutPct": 88.07470217746453,
+            "electors": 2347455,
+            "voters": 2067514,
+            "firstParty": "DC",
+            "firstPartyShare": 27.539993560391046,
+            "secondParty": "Pds",
+            "secondPartyShare": 18.9371511351959,
+            "firstSecondMargin": 8.602842425195146,
+            "sourceCorrection": "Resolved municipality_id 058091 through the current municipality reference; the raw 1992 shard still carries the stale label Romallo/Trento."
+          }
+        }
+      },
+      {
+        "key": "camera_2022",
+        "label": {
+          "it": "Camera 2022",
+          "en": "Chamber 2022"
+        },
+        "municipalCount": 7830,
+        "turnoutDistribution": {
+          "method": "linear quantiles across municipalities, matching Electio app quantileFromSorted",
+          "min": 21.494253,
+          "p20": 57.101567,
+          "p40": 64.159496,
+          "p60": 68.042724,
+          "p80": 71.281336,
+          "max": 94.871795
+        },
+        "national": {
+          "turnoutPct": 63.912227,
+          "electors": 46021956,
+          "voters": 29413657
+        },
+        "places": {
+          "Olgiate Molgora": {
+            "municipalityId": "097058",
+            "name": "Olgiate Molgora",
+            "province": "Lecco",
+            "region": "Lombardia",
+            "turnoutPct": 70.73995771670191,
+            "electors": 4730,
+            "voters": 3346,
+            "firstParty": "FdI",
+            "firstPartyShare": 24.5136186770428,
+            "secondParty": "PD",
+            "secondPartyShare": 19.747081712062258,
+            "firstSecondMargin": 4.766536964980542
+          },
+          "Merate": {
+            "municipalityId": "097048",
+            "name": "Merate",
+            "province": "Lecco",
+            "region": "Lombardia",
+            "turnoutPct": 74.60234224785877,
+            "electors": 11442,
+            "voters": 8536,
+            "firstParty": "FdI",
+            "firstPartyShare": 23.71957403651116,
+            "secondParty": "PD",
+            "secondPartyShare": 21.919371196754565,
+            "firstSecondMargin": 1.8002028397565937
+          },
+          "Milano": {
+            "municipalityId": "015146",
+            "name": "Milano",
+            "province": "Milano",
+            "region": "Lombardia",
+            "turnoutPct": 68.34733066359263,
+            "electors": 948157,
+            "voters": 648040,
+            "firstParty": "PD",
+            "firstPartyShare": 25.525703905838494,
+            "secondParty": "FdI",
+            "secondPartyShare": 20.609890371352478,
+            "firstSecondMargin": 4.915813534486016
+          },
+          "Roma": {
+            "municipalityId": "058091",
+            "name": "Roma",
+            "province": "Roma",
+            "region": "Lazio",
+            "turnoutPct": 65.33082414850378,
+            "electors": 2055382,
+            "voters": 1342798,
+            "firstParty": "FdI",
+            "firstPartyShare": 28.602866353796212,
+            "secondParty": "PD",
+            "secondPartyShare": 23.22363682726657,
+            "firstSecondMargin": 5.379229526529642
+          }
+        }
+      }
+    ]
+  },
+  "s8": {
+    "unit": {
+      "dailyBoardings": "Saliti24H",
+      "index": "2019 = 100"
+    },
+    "sourcePeriods": {
+      "2015-2023": "Flussi Stazioni Ferroviarie (2015-2023)",
+      "2024-2025": "Frequentazione stazioni SFR (2024-2025)"
+    },
+    "merateseStations": [
+      "Airuno",
+      "Cernusco-Merate",
+      "Olgiate-Calco-Brivio",
+      "Osnago"
+    ],
+    "merateseAggregate": {
+      "dailyBoardings2019": 4620,
+      "dailyBoardings2025": 8980,
+      "growthPct": 94.4
+    },
+    "stations": [
+      {
+        "id": "AIRUNO",
+        "label": "Airuno",
+        "meratese": true,
+        "values": [
+          {
+            "year": 2015,
+            "dailyBoardings": 680,
+            "index2019": 94.44444444444444
+          },
+          {
+            "year": 2016,
+            "dailyBoardings": 670,
+            "index2019": 93.05555555555556
+          },
+          {
+            "year": 2017,
+            "dailyBoardings": 720,
+            "index2019": 100
+          },
+          {
+            "year": 2018,
+            "dailyBoardings": 740,
+            "index2019": 102.77777777777777
+          },
+          {
+            "year": 2019,
+            "dailyBoardings": 720,
+            "index2019": 100
+          },
+          {
+            "year": 2020,
+            "dailyBoardings": 190,
+            "index2019": 26.38888888888889
+          },
+          {
+            "year": 2021,
+            "dailyBoardings": 540,
+            "index2019": 75
+          },
+          {
+            "year": 2022,
+            "dailyBoardings": 690,
+            "index2019": 95.83333333333334
+          },
+          {
+            "year": 2023,
+            "dailyBoardings": 1100,
+            "index2019": 152.77777777777777
+          },
+          {
+            "year": 2024,
+            "dailyBoardings": 1320,
+            "index2019": 183.33333333333331
+          },
+          {
+            "year": 2025,
+            "dailyBoardings": 1860,
+            "index2019": 258.33333333333337
+          }
+        ]
+      },
+      {
+        "id": "ARCORE",
+        "label": "Arcore",
+        "meratese": false,
+        "values": [
+          {
+            "year": 2015,
+            "dailyBoardings": 3740,
+            "index2019": 91.8918918918919
+          },
+          {
+            "year": 2016,
+            "dailyBoardings": 4030,
+            "index2019": 99.01719901719902
+          },
+          {
+            "year": 2017,
+            "dailyBoardings": 4460,
+            "index2019": 109.58230958230959
+          },
+          {
+            "year": 2018,
+            "dailyBoardings": 4610,
+            "index2019": 113.26781326781328
+          },
+          {
+            "year": 2019,
+            "dailyBoardings": 4070,
+            "index2019": 100
+          },
+          {
+            "year": 2020,
+            "dailyBoardings": 1230,
+            "index2019": 30.22113022113022
+          },
+          {
+            "year": 2021,
+            "dailyBoardings": 3240,
+            "index2019": 79.60687960687962
+          },
+          {
+            "year": 2022,
+            "dailyBoardings": 3400,
+            "index2019": 83.53808353808354
+          },
+          {
+            "year": 2023,
+            "dailyBoardings": 4080,
+            "index2019": 100.24570024570025
+          },
+          {
+            "year": 2024,
+            "dailyBoardings": 5400,
+            "index2019": 132.6781326781327
+          },
+          {
+            "year": 2025,
+            "dailyBoardings": 5620,
+            "index2019": 138.0835380835381
+          }
+        ]
+      },
+      {
+        "id": "CALOLZIOCORTE-OLGINATE",
+        "label": "Calolziocorte-Olginate",
+        "meratese": false,
+        "values": [
+          {
+            "year": 2015,
+            "dailyBoardings": 2440,
+            "index2019": 77.46031746031747
+          },
+          {
+            "year": 2016,
+            "dailyBoardings": 2360,
+            "index2019": 74.92063492063492
+          },
+          {
+            "year": 2017,
+            "dailyBoardings": 2650,
+            "index2019": 84.12698412698413
+          },
+          {
+            "year": 2018,
+            "dailyBoardings": 3040,
+            "index2019": 96.5079365079365
+          },
+          {
+            "year": 2019,
+            "dailyBoardings": 3150,
+            "index2019": 100
+          },
+          {
+            "year": 2020,
+            "dailyBoardings": 730,
+            "index2019": 23.174603174603174
+          },
+          {
+            "year": 2021,
+            "dailyBoardings": 1820,
+            "index2019": 57.77777777777777
+          },
+          {
+            "year": 2022,
+            "dailyBoardings": 2080,
+            "index2019": 66.03174603174602
+          },
+          {
+            "year": 2023,
+            "dailyBoardings": 2780,
+            "index2019": 88.25396825396825
+          },
+          {
+            "year": 2024,
+            "dailyBoardings": 3180,
+            "index2019": 100.95238095238095
+          },
+          {
+            "year": 2025,
+            "dailyBoardings": 3970,
+            "index2019": 126.03174603174602
+          }
+        ]
+      },
+      {
+        "id": "CARNATE USMATE",
+        "label": "Carnate Usmate",
+        "meratese": false,
+        "values": [
+          {
+            "year": 2015,
+            "dailyBoardings": 4150,
+            "index2019": 110.66666666666667
+          },
+          {
+            "year": 2016,
+            "dailyBoardings": 4730,
+            "index2019": 126.13333333333334
+          },
+          {
+            "year": 2017,
+            "dailyBoardings": 4550,
+            "index2019": 121.33333333333334
+          },
+          {
+            "year": 2018,
+            "dailyBoardings": 4230,
+            "index2019": 112.79999999999998
+          },
+          {
+            "year": 2019,
+            "dailyBoardings": 3750,
+            "index2019": 100
+          },
+          {
+            "year": 2020,
+            "dailyBoardings": 1130,
+            "index2019": 30.133333333333333
+          },
+          {
+            "year": 2021,
+            "dailyBoardings": 2860,
+            "index2019": 76.26666666666667
+          },
+          {
+            "year": 2022,
+            "dailyBoardings": 3100,
+            "index2019": 82.66666666666667
+          },
+          {
+            "year": 2023,
+            "dailyBoardings": 3880,
+            "index2019": 103.46666666666667
+          },
+          {
+            "year": 2024,
+            "dailyBoardings": 4800,
+            "index2019": 128
+          },
+          {
+            "year": 2025,
+            "dailyBoardings": 5450,
+            "index2019": 145.33333333333334
+          }
+        ]
+      },
+      {
+        "id": "CERNUSCO-MERATE",
+        "label": "Cernusco-Merate",
+        "meratese": true,
+        "values": [
+          {
+            "year": 2015,
+            "dailyBoardings": 1530,
+            "index2019": 101.32450331125828
+          },
+          {
+            "year": 2016,
+            "dailyBoardings": 1470,
+            "index2019": 97.35099337748345
+          },
+          {
+            "year": 2017,
+            "dailyBoardings": 1690,
+            "index2019": 111.92052980132449
+          },
+          {
+            "year": 2018,
+            "dailyBoardings": 1640,
+            "index2019": 108.6092715231788
+          },
+          {
+            "year": 2019,
+            "dailyBoardings": 1510,
+            "index2019": 100
+          },
+          {
+            "year": 2020,
+            "dailyBoardings": 410,
+            "index2019": 27.1523178807947
+          },
+          {
+            "year": 2021,
+            "dailyBoardings": 1410,
+            "index2019": 93.37748344370861
+          },
+          {
+            "year": 2022,
+            "dailyBoardings": 1330,
+            "index2019": 88.0794701986755
+          },
+          {
+            "year": 2023,
+            "dailyBoardings": 1890,
+            "index2019": 125.16556291390728
+          },
+          {
+            "year": 2024,
+            "dailyBoardings": 2100,
+            "index2019": 139.0728476821192
+          },
+          {
+            "year": 2025,
+            "dailyBoardings": 2620,
+            "index2019": 173.50993377483442
+          }
+        ]
+      },
+      {
+        "id": "LECCO",
+        "label": "Lecco",
+        "meratese": false,
+        "values": [
+          {
+            "year": 2015,
+            "dailyBoardings": 9160,
+            "index2019": 97.96791443850267
+          },
+          {
+            "year": 2016,
+            "dailyBoardings": 9340,
+            "index2019": 99.89304812834224
+          },
+          {
+            "year": 2017,
+            "dailyBoardings": 9300,
+            "index2019": 99.46524064171123
+          },
+          {
+            "year": 2018,
+            "dailyBoardings": 10170,
+            "index2019": 108.77005347593582
+          },
+          {
+            "year": 2019,
+            "dailyBoardings": 9350,
+            "index2019": 100
+          },
+          {
+            "year": 2020,
+            "dailyBoardings": 1970,
+            "index2019": 21.06951871657754
+          },
+          {
+            "year": 2021,
+            "dailyBoardings": 7550,
+            "index2019": 80.74866310160428
+          },
+          {
+            "year": 2022,
+            "dailyBoardings": 8010,
+            "index2019": 85.66844919786097
+          },
+          {
+            "year": 2023,
+            "dailyBoardings": 9600,
+            "index2019": 102.67379679144386
+          },
+          {
+            "year": 2024,
+            "dailyBoardings": 10780,
+            "index2019": 115.29411764705881
+          },
+          {
+            "year": 2025,
+            "dailyBoardings": 12400,
+            "index2019": 132.62032085561498
+          }
+        ]
+      },
+      {
+        "id": "MILANO GRECO PIRELLI",
+        "label": "Milano Greco Pirelli",
+        "meratese": false,
+        "values": [
+          {
+            "year": 2015,
+            "dailyBoardings": 14940,
+            "index2019": 88.87566924449732
+          },
+          {
+            "year": 2016,
+            "dailyBoardings": 16130,
+            "index2019": 95.95478881618085
+          },
+          {
+            "year": 2017,
+            "dailyBoardings": 15910,
+            "index2019": 94.64604402141582
+          },
+          {
+            "year": 2018,
+            "dailyBoardings": 16230,
+            "index2019": 96.54967281380131
+          },
+          {
+            "year": 2019,
+            "dailyBoardings": 16810,
+            "index2019": 100
+          },
+          {
+            "year": 2020,
+            "dailyBoardings": 2390,
+            "index2019": 14.217727543129092
+          },
+          {
+            "year": 2021,
+            "dailyBoardings": 9530,
+            "index2019": 56.69244497323022
+          },
+          {
+            "year": 2022,
+            "dailyBoardings": 12500,
+            "index2019": 74.360499702558
+          },
+          {
+            "year": 2023,
+            "dailyBoardings": 11670,
+            "index2019": 69.42296252230815
+          },
+          {
+            "year": 2024,
+            "dailyBoardings": 13400,
+            "index2019": 79.71445568114218
+          },
+          {
+            "year": 2025,
+            "dailyBoardings": 15100,
+            "index2019": 89.82748364069006
+          }
+        ]
+      },
+      {
+        "id": "MILANO PORTA GARIBALDI",
+        "label": "Milano Porta Garibaldi",
+        "meratese": false,
+        "values": [
+          {
+            "year": 2015,
+            "dailyBoardings": 34710,
+            "index2019": 92.98151620680419
+          },
+          {
+            "year": 2016,
+            "dailyBoardings": 34560,
+            "index2019": 92.57969461559068
+          },
+          {
+            "year": 2017,
+            "dailyBoardings": 33010,
+            "index2019": 88.42753817305116
+          },
+          {
+            "year": 2018,
+            "dailyBoardings": 37050,
+            "index2019": 99.24993302973479
+          },
+          {
+            "year": 2019,
+            "dailyBoardings": 37330,
+            "index2019": 100
+          },
+          {
+            "year": 2020,
+            "dailyBoardings": 7490,
+            "index2019": 20.06429145459416
+          },
+          {
+            "year": 2021,
+            "dailyBoardings": 22400,
+            "index2019": 60.005357621216184
+          },
+          {
+            "year": 2022,
+            "dailyBoardings": 28430,
+            "index2019": 76.15858558799893
+          },
+          {
+            "year": 2023,
+            "dailyBoardings": 27440,
+            "index2019": 73.50656308598982
+          },
+          {
+            "year": 2024,
+            "dailyBoardings": 27860,
+            "index2019": 74.63166354138762
+          },
+          {
+            "year": 2025,
+            "dailyBoardings": 26180,
+            "index2019": 70.13126171979641
+          }
+        ]
+      },
+      {
+        "id": "MONZA",
+        "label": "Monza",
+        "meratese": false,
+        "values": [
+          {
+            "year": 2015,
+            "dailyBoardings": 18170,
+            "index2019": 82.85453716370269
+          },
+          {
+            "year": 2016,
+            "dailyBoardings": 20250,
+            "index2019": 92.33926128590971
+          },
+          {
+            "year": 2017,
+            "dailyBoardings": 21030,
+            "index2019": 95.89603283173734
+          },
+          {
+            "year": 2018,
+            "dailyBoardings": 21670,
+            "index2019": 98.81440948472412
+          },
+          {
+            "year": 2019,
+            "dailyBoardings": 21930,
+            "index2019": 100
+          },
+          {
+            "year": 2020,
+            "dailyBoardings": 5870,
+            "index2019": 26.766985864113085
+          },
+          {
+            "year": 2021,
+            "dailyBoardings": 16220,
+            "index2019": 73.9626082991336
+          },
+          {
+            "year": 2022,
+            "dailyBoardings": 20540,
+            "index2019": 93.66165070679435
+          },
+          {
+            "year": 2023,
+            "dailyBoardings": 20260,
+            "index2019": 92.38486092111263
+          },
+          {
+            "year": 2024,
+            "dailyBoardings": 20880,
+            "index2019": 95.21203830369357
+          },
+          {
+            "year": 2025,
+            "dailyBoardings": 21610,
+            "index2019": 98.54081167350661
+          }
+        ]
+      },
+      {
+        "id": "OLGIATE-CALCO-BRIVIO",
+        "label": "Olgiate-Calco-Brivio",
+        "meratese": true,
+        "values": [
+          {
+            "year": 2015,
+            "dailyBoardings": 1560,
+            "index2019": 109.85915492957747
+          },
+          {
+            "year": 2016,
+            "dailyBoardings": 1410,
+            "index2019": 99.29577464788733
+          },
+          {
+            "year": 2017,
+            "dailyBoardings": 1480,
+            "index2019": 104.22535211267605
+          },
+          {
+            "year": 2018,
+            "dailyBoardings": 1550,
+            "index2019": 109.1549295774648
+          },
+          {
+            "year": 2019,
+            "dailyBoardings": 1420,
+            "index2019": 100
+          },
+          {
+            "year": 2020,
+            "dailyBoardings": 380,
+            "index2019": 26.76056338028169
+          },
+          {
+            "year": 2021,
+            "dailyBoardings": 1080,
+            "index2019": 76.05633802816901
+          },
+          {
+            "year": 2022,
+            "dailyBoardings": 1300,
+            "index2019": 91.54929577464789
+          },
+          {
+            "year": 2023,
+            "dailyBoardings": 1660,
+            "index2019": 116.90140845070422
+          },
+          {
+            "year": 2024,
+            "dailyBoardings": 1830,
+            "index2019": 128.8732394366197
+          },
+          {
+            "year": 2025,
+            "dailyBoardings": 2400,
+            "index2019": 169.01408450704224
+          }
+        ]
+      },
+      {
+        "id": "OSNAGO",
+        "label": "Osnago",
+        "meratese": true,
+        "values": [
+          {
+            "year": 2015,
+            "dailyBoardings": 790,
+            "index2019": 81.44329896907216
+          },
+          {
+            "year": 2016,
+            "dailyBoardings": 870,
+            "index2019": 89.69072164948454
+          },
+          {
+            "year": 2017,
+            "dailyBoardings": 890,
+            "index2019": 91.75257731958763
+          },
+          {
+            "year": 2018,
+            "dailyBoardings": 1000,
+            "index2019": 103.09278350515463
+          },
+          {
+            "year": 2019,
+            "dailyBoardings": 970,
+            "index2019": 100
+          },
+          {
+            "year": 2020,
+            "dailyBoardings": 260,
+            "index2019": 26.804123711340207
+          },
+          {
+            "year": 2021,
+            "dailyBoardings": 800,
+            "index2019": 82.4742268041237
+          },
+          {
+            "year": 2022,
+            "dailyBoardings": 890,
+            "index2019": 91.75257731958763
+          },
+          {
+            "year": 2023,
+            "dailyBoardings": 1260,
+            "index2019": 129.89690721649484
+          },
+          {
+            "year": 2024,
+            "dailyBoardings": 1590,
+            "index2019": 163.91752577319588
+          },
+          {
+            "year": 2025,
+            "dailyBoardings": 2100,
+            "index2019": 216.49484536082474
+          }
+        ]
+      }
+    ]
+  },
+  "schools": {
+    "analysisDate": "2026-05-14",
+    "coverage": {
+      "rowsTotal": 490,
+      "rowsWithFinalIndex": 474,
+      "municipalPoints": 474,
+      "missingMunicipalBoundaries": 0
+    },
+    "topItaly": [
+      {
+        "id": "fossano-cuneo",
+        "rank": 1,
+        "municipality": "Fossano",
+        "province": "Cuneo",
+        "provinceCode": "CN",
+        "region": "Piemonte",
+        "index": 119.52,
+        "reliability": 85.68,
+        "graduates": 478,
+        "studyTracks": 7
+      },
+      {
+        "id": "merate-lecco",
+        "rank": 2,
+        "municipality": "Merate",
+        "province": "Lecco",
+        "provinceCode": "LC",
+        "region": "Lombardia",
+        "index": 115.11,
+        "reliability": 87,
+        "graduates": 396,
+        "studyTracks": 5
+      },
+      {
+        "id": "thiene-vicenza",
+        "rank": 3,
+        "municipality": "Thiene",
+        "province": "Vicenza",
+        "provinceCode": "VI",
+        "region": "Veneto",
+        "index": 114.55,
+        "reliability": 89.64,
+        "graduates": 483,
+        "studyTracks": 9
+      },
+      {
+        "id": "sondrio-sondrio",
+        "rank": 4,
+        "municipality": "Sondrio",
+        "province": "Sondrio",
+        "provinceCode": "SO",
+        "region": "Lombardia",
+        "index": 113.95,
+        "reliability": 88.23,
+        "graduates": 550,
+        "studyTracks": 11
+      },
+      {
+        "id": "desio-monza-e-della-brianza",
+        "rank": 5,
+        "municipality": "Desio",
+        "province": "Monza e della Brianza",
+        "provinceCode": "MB",
+        "region": "Lombardia",
+        "index": 113.73,
+        "reliability": 83.33,
+        "graduates": 387,
+        "studyTracks": 5
+      },
+      {
+        "id": "presezzo-bergamo",
+        "rank": 6,
+        "municipality": "Presezzo",
+        "province": "Bergamo",
+        "provinceCode": "BG",
+        "region": "Lombardia",
+        "index": 113.6,
+        "reliability": 92,
+        "graduates": 360,
+        "studyTracks": 9
+      },
+      {
+        "id": "castellana-grotte-bari",
+        "rank": 7,
+        "municipality": "Castellana Grotte",
+        "province": "Bari",
+        "provinceCode": "BA",
+        "region": "Puglia",
+        "index": 113.3,
+        "reliability": 93.47,
+        "graduates": 374,
+        "studyTracks": 4
+      },
+      {
+        "id": "cuneo-cuneo",
+        "rank": 8,
+        "municipality": "Cuneo",
+        "province": "Cuneo",
+        "provinceCode": "CN",
+        "region": "Piemonte",
+        "index": 112.96,
+        "reliability": 94.25,
+        "graduates": 1030,
+        "studyTracks": 15
+      },
+      {
+        "id": "montebelluna-treviso",
+        "rank": 9,
+        "municipality": "Montebelluna",
+        "province": "Treviso",
+        "provinceCode": "TV",
+        "region": "Veneto",
+        "index": 111.61,
+        "reliability": 90.21,
+        "graduates": 612,
+        "studyTracks": 11
+      },
+      {
+        "id": "villorba-treviso",
+        "rank": 10,
+        "municipality": "Villorba",
+        "province": "Treviso",
+        "provinceCode": "TV",
+        "region": "Veneto",
+        "index": 111.47,
+        "reliability": 93.73,
+        "graduates": 410,
+        "studyTracks": 3
+      }
+    ],
+    "topLombardy": [
+      {
+        "id": "merate-lecco",
+        "rank": 2,
+        "municipality": "Merate",
+        "province": "Lecco",
+        "provinceCode": "LC",
+        "region": "Lombardia",
+        "index": 115.11,
+        "reliability": 87,
+        "graduates": 396,
+        "studyTracks": 5
+      },
+      {
+        "id": "sondrio-sondrio",
+        "rank": 4,
+        "municipality": "Sondrio",
+        "province": "Sondrio",
+        "provinceCode": "SO",
+        "region": "Lombardia",
+        "index": 113.95,
+        "reliability": 88.23,
+        "graduates": 550,
+        "studyTracks": 11
+      },
+      {
+        "id": "desio-monza-e-della-brianza",
+        "rank": 5,
+        "municipality": "Desio",
+        "province": "Monza e della Brianza",
+        "provinceCode": "MB",
+        "region": "Lombardia",
+        "index": 113.73,
+        "reliability": 83.33,
+        "graduates": 387,
+        "studyTracks": 5
+      },
+      {
+        "id": "presezzo-bergamo",
+        "rank": 6,
+        "municipality": "Presezzo",
+        "province": "Bergamo",
+        "provinceCode": "BG",
+        "region": "Lombardia",
+        "index": 113.6,
+        "reliability": 92,
+        "graduates": 360,
+        "studyTracks": 9
+      },
+      {
+        "id": "lonato-del-garda-brescia",
+        "rank": 13,
+        "municipality": "Lonato del Garda",
+        "province": "Brescia",
+        "provinceCode": "BS",
+        "region": "Lombardia",
+        "index": 111.06,
+        "reliability": 88.14,
+        "graduates": 219,
+        "studyTracks": 3
+      },
+      {
+        "id": "busnago-monza-e-della-brianza",
+        "rank": 16,
+        "municipality": "Busnago",
+        "province": "Monza e della Brianza",
+        "provinceCode": "MB",
+        "region": "Lombardia",
+        "index": 110.54,
+        "reliability": 45.54,
+        "graduates": 18,
+        "studyTracks": 2
+      },
+      {
+        "id": "lovere-bergamo",
+        "rank": 17,
+        "municipality": "Lovere",
+        "province": "Bergamo",
+        "provinceCode": "BG",
+        "region": "Lombardia",
+        "index": 110.49,
+        "reliability": 88.71,
+        "graduates": 281,
+        "studyTracks": 9
+      },
+      {
+        "id": "breno-brescia",
+        "rank": 23,
+        "municipality": "Breno",
+        "province": "Brescia",
+        "provinceCode": "BS",
+        "region": "Lombardia",
+        "index": 109.96,
+        "reliability": 97.16,
+        "graduates": 318,
+        "studyTracks": 9
+      },
+      {
+        "id": "dalmine-bergamo",
+        "rank": 26,
+        "municipality": "Dalmine",
+        "province": "Bergamo",
+        "provinceCode": "BG",
+        "region": "Lombardia",
+        "index": 109.73,
+        "reliability": 88.54,
+        "graduates": 394,
+        "studyTracks": 6
+      },
+      {
+        "id": "lecco-lecco",
+        "rank": 27,
+        "municipality": "Lecco",
+        "province": "Lecco",
+        "provinceCode": "LC",
+        "region": "Lombardia",
+        "index": 109.71,
+        "reliability": 94.18,
+        "graduates": 1205,
+        "studyTracks": 26
+      }
+    ],
+    "provinceLecco": [
+      {
+        "id": "merate-lecco",
+        "rank": 2,
+        "municipality": "Merate",
+        "province": "Lecco",
+        "provinceCode": "LC",
+        "region": "Lombardia",
+        "index": 115.11,
+        "reliability": 87,
+        "graduates": 396,
+        "studyTracks": 5
+      },
+      {
+        "id": "lecco-lecco",
+        "rank": 27,
+        "municipality": "Lecco",
+        "province": "Lecco",
+        "provinceCode": "LC",
+        "region": "Lombardia",
+        "index": 109.71,
+        "reliability": 94.18,
+        "graduates": 1205,
+        "studyTracks": 26
+      }
+    ],
+    "merate": {
+      "base": {
+        "id": "merate-lecco",
+        "rank": 2,
+        "municipality": "Merate",
+        "province": "Lecco",
+        "provinceCode": "LC",
+        "region": "Lombardia",
+        "index": 115.11,
+        "reliability": 87,
+        "graduates": 396,
+        "studyTracks": 5
+      },
+      "index6Indicators": 118.09,
+      "componentScores": {
+        "schoolOutcomes": 29.5,
+        "universityOutcomes": 11.14,
+        "workPure": 5.88,
+        "workCoverage": 2.9,
+        "universityEnrollment": 0.61,
+        "continuity": 5.32
+      },
+      "absolute": {
+        "docentePct": 82.5,
+        "uniScore": 71.85,
+        "lavoroScore": 48.2,
+        "immatricolazionePct": 69.2,
+        "continuitaPct": 61.5,
+        "abbandonoPct": 7.7
+      },
+      "macroTracks": {
+        "licei": {
+          "delta": 14,
+          "peso": 201,
+          "score": 82.16
+        },
+        "tecnici": {
+          "delta": 7.04,
+          "peso": 195,
+          "score": 54.71
+        },
+        "professionali": {
+          "delta": null,
+          "peso": 0,
+          "score": null
+        }
+      },
+      "subrankings": {
+        "docente": {
+          "rank": 6,
+          "value": 29.5
+        },
+        "eduscopio_uni": {
+          "rank": 15,
+          "value": 11.14
+        },
+        "lavoro_puro": {
+          "rank": 172,
+          "value": 5.88
+        },
+        "lavoro_copertura": {
+          "rank": 169,
+          "value": 2.9
+        },
+        "immatricolazione": {
+          "rank": 196,
+          "value": 0.61
+        },
+        "continuita": {
+          "rank": 58,
+          "value": 5.32
+        },
+        "finale": {
+          "rank": 2,
+          "value": 115.11
+        }
+      },
+      "employmentCoveragePct": 49.24
+    }
+  },
+  "genz": {
+    "measure": {
+      "it": "Posizione media sinistra-destra CHES del partito sostenuto",
+      "en": "Average CHES left-right position of the supported party",
+      "caution": "This is supported-party position, not respondents self-placement."
+    },
+    "population": "EU27 pooled sample",
+    "birthYears": {
+      "from": 1936,
+      "to": 2005
+    },
+    "derivation": "Linear interpolation at each integer birth year from the exact prominent smoothed Plotly traces data[6] (Female) and data[7] (Male).",
+    "cohorts": [
+      {
+        "birthYear": 1936,
+        "female": 5.685826,
+        "male": 5.627326,
+        "gapMaleMinusFemale": -0.0585
+      },
+      {
+        "birthYear": 1937,
+        "female": 5.660758,
+        "male": 5.61937,
+        "gapMaleMinusFemale": -0.041388
+      },
+      {
+        "birthYear": 1938,
+        "female": 5.637101,
+        "male": 5.612273,
+        "gapMaleMinusFemale": -0.024828
+      },
+      {
+        "birthYear": 1939,
+        "female": 5.614838,
+        "male": 5.605961,
+        "gapMaleMinusFemale": -0.008878
+      },
+      {
+        "birthYear": 1940,
+        "female": 5.593956,
+        "male": 5.600365,
+        "gapMaleMinusFemale": 0.006409
+      },
+      {
+        "birthYear": 1941,
+        "female": 5.574458,
+        "male": 5.595497,
+        "gapMaleMinusFemale": 0.021039
+      },
+      {
+        "birthYear": 1942,
+        "female": 5.556363,
+        "male": 5.591424,
+        "gapMaleMinusFemale": 0.035061
+      },
+      {
+        "birthYear": 1943,
+        "female": 5.539695,
+        "male": 5.588198,
+        "gapMaleMinusFemale": 0.048503
+      },
+      {
+        "birthYear": 1944,
+        "female": 5.524592,
+        "male": 5.585933,
+        "gapMaleMinusFemale": 0.061342
+      },
+      {
+        "birthYear": 1945,
+        "female": 5.510909,
+        "male": 5.584529,
+        "gapMaleMinusFemale": 0.07362
+      },
+      {
+        "birthYear": 1946,
+        "female": 5.498639,
+        "male": 5.583956,
+        "gapMaleMinusFemale": 0.085317
+      },
+      {
+        "birthYear": 1947,
+        "female": 5.48778,
+        "male": 5.584232,
+        "gapMaleMinusFemale": 0.096452
+      },
+      {
+        "birthYear": 1948,
+        "female": 5.478329,
+        "male": 5.585377,
+        "gapMaleMinusFemale": 0.107048
+      },
+      {
+        "birthYear": 1949,
+        "female": 5.470281,
+        "male": 5.587407,
+        "gapMaleMinusFemale": 0.117126
+      },
+      {
+        "birthYear": 1950,
+        "female": 5.463481,
+        "male": 5.590067,
+        "gapMaleMinusFemale": 0.126586
+      },
+      {
+        "birthYear": 1951,
+        "female": 5.457991,
+        "male": 5.593344,
+        "gapMaleMinusFemale": 0.135353
+      },
+      {
+        "birthYear": 1952,
+        "female": 5.453928,
+        "male": 5.597499,
+        "gapMaleMinusFemale": 0.143572
+      },
+      {
+        "birthYear": 1953,
+        "female": 5.451545,
+        "male": 5.602751,
+        "gapMaleMinusFemale": 0.151206
+      },
+      {
+        "birthYear": 1954,
+        "female": 5.451226,
+        "male": 5.608633,
+        "gapMaleMinusFemale": 0.157407
+      },
+      {
+        "birthYear": 1955,
+        "female": 5.452995,
+        "male": 5.61476,
+        "gapMaleMinusFemale": 0.161765
+      },
+      {
+        "birthYear": 1956,
+        "female": 5.456419,
+        "male": 5.621557,
+        "gapMaleMinusFemale": 0.165137
+      },
+      {
+        "birthYear": 1957,
+        "female": 5.461052,
+        "male": 5.629594,
+        "gapMaleMinusFemale": 0.168542
+      },
+      {
+        "birthYear": 1958,
+        "female": 5.466867,
+        "male": 5.63979,
+        "gapMaleMinusFemale": 0.172924
+      },
+      {
+        "birthYear": 1959,
+        "female": 5.477146,
+        "male": 5.654454,
+        "gapMaleMinusFemale": 0.177308
+      },
+      {
+        "birthYear": 1960,
+        "female": 5.493002,
+        "male": 5.673657,
+        "gapMaleMinusFemale": 0.180655
+      },
+      {
+        "birthYear": 1961,
+        "female": 5.509414,
+        "male": 5.693489,
+        "gapMaleMinusFemale": 0.184074
+      },
+      {
+        "birthYear": 1962,
+        "female": 5.521452,
+        "male": 5.710156,
+        "gapMaleMinusFemale": 0.188704
+      },
+      {
+        "birthYear": 1963,
+        "female": 5.531316,
+        "male": 5.726121,
+        "gapMaleMinusFemale": 0.194804
+      },
+      {
+        "birthYear": 1964,
+        "female": 5.542942,
+        "male": 5.744804,
+        "gapMaleMinusFemale": 0.201861
+      },
+      {
+        "birthYear": 1965,
+        "female": 5.555881,
+        "male": 5.76531,
+        "gapMaleMinusFemale": 0.209429
+      },
+      {
+        "birthYear": 1966,
+        "female": 5.56899,
+        "male": 5.786082,
+        "gapMaleMinusFemale": 0.217092
+      },
+      {
+        "birthYear": 1967,
+        "female": 5.581277,
+        "male": 5.805766,
+        "gapMaleMinusFemale": 0.224489
+      },
+      {
+        "birthYear": 1968,
+        "female": 5.591749,
+        "male": 5.82301,
+        "gapMaleMinusFemale": 0.231261
+      },
+      {
+        "birthYear": 1969,
+        "female": 5.599411,
+        "male": 5.836459,
+        "gapMaleMinusFemale": 0.237048
+      },
+      {
+        "birthYear": 1970,
+        "female": 5.603274,
+        "male": 5.844763,
+        "gapMaleMinusFemale": 0.24149
+      },
+      {
+        "birthYear": 1971,
+        "female": 5.60328,
+        "male": 5.847528,
+        "gapMaleMinusFemale": 0.244248
+      },
+      {
+        "birthYear": 1972,
+        "female": 5.600788,
+        "male": 5.84658,
+        "gapMaleMinusFemale": 0.245792
+      },
+      {
+        "birthYear": 1973,
+        "female": 5.59681,
+        "male": 5.843707,
+        "gapMaleMinusFemale": 0.246896
+      },
+      {
+        "birthYear": 1974,
+        "female": 5.592158,
+        "male": 5.840401,
+        "gapMaleMinusFemale": 0.248242
+      },
+      {
+        "birthYear": 1975,
+        "female": 5.587431,
+        "male": 5.837767,
+        "gapMaleMinusFemale": 0.250336
+      },
+      {
+        "birthYear": 1976,
+        "female": 5.580429,
+        "male": 5.831798,
+        "gapMaleMinusFemale": 0.251369
+      },
+      {
+        "birthYear": 1977,
+        "female": 5.57016,
+        "male": 5.820861,
+        "gapMaleMinusFemale": 0.250702
+      },
+      {
+        "birthYear": 1978,
+        "female": 5.558725,
+        "male": 5.80922,
+        "gapMaleMinusFemale": 0.250494
+      },
+      {
+        "birthYear": 1979,
+        "female": 5.548502,
+        "male": 5.801409,
+        "gapMaleMinusFemale": 0.252907
+      },
+      {
+        "birthYear": 1980,
+        "female": 5.538264,
+        "male": 5.794346,
+        "gapMaleMinusFemale": 0.256082
+      },
+      {
+        "birthYear": 1981,
+        "female": 5.525691,
+        "male": 5.783084,
+        "gapMaleMinusFemale": 0.257393
+      },
+      {
+        "birthYear": 1982,
+        "female": 5.511937,
+        "male": 5.770387,
+        "gapMaleMinusFemale": 0.25845
+      },
+      {
+        "birthYear": 1983,
+        "female": 5.498281,
+        "male": 5.759287,
+        "gapMaleMinusFemale": 0.261007
+      },
+      {
+        "birthYear": 1984,
+        "female": 5.485996,
+        "male": 5.752813,
+        "gapMaleMinusFemale": 0.266816
+      },
+      {
+        "birthYear": 1985,
+        "female": 5.474139,
+        "male": 5.749976,
+        "gapMaleMinusFemale": 0.275837
+      },
+      {
+        "birthYear": 1986,
+        "female": 5.461508,
+        "male": 5.747797,
+        "gapMaleMinusFemale": 0.28629
+      },
+      {
+        "birthYear": 1987,
+        "female": 5.448953,
+        "male": 5.746687,
+        "gapMaleMinusFemale": 0.297734
+      },
+      {
+        "birthYear": 1988,
+        "female": 5.437238,
+        "male": 5.747112,
+        "gapMaleMinusFemale": 0.309874
+      },
+      {
+        "birthYear": 1989,
+        "female": 5.42609,
+        "male": 5.748958,
+        "gapMaleMinusFemale": 0.322869
+      },
+      {
+        "birthYear": 1990,
+        "female": 5.414919,
+        "male": 5.751927,
+        "gapMaleMinusFemale": 0.337007
+      },
+      {
+        "birthYear": 1991,
+        "female": 5.403834,
+        "male": 5.756104,
+        "gapMaleMinusFemale": 0.35227
+      },
+      {
+        "birthYear": 1992,
+        "female": 5.393092,
+        "male": 5.761769,
+        "gapMaleMinusFemale": 0.368676
+      },
+      {
+        "birthYear": 1993,
+        "female": 5.382878,
+        "male": 5.768981,
+        "gapMaleMinusFemale": 0.386103
+      },
+      {
+        "birthYear": 1994,
+        "female": 5.373103,
+        "male": 5.777737,
+        "gapMaleMinusFemale": 0.404634
+      },
+      {
+        "birthYear": 1995,
+        "female": 5.363546,
+        "male": 5.787905,
+        "gapMaleMinusFemale": 0.424359
+      },
+      {
+        "birthYear": 1996,
+        "female": 5.354206,
+        "male": 5.799356,
+        "gapMaleMinusFemale": 0.44515
+      },
+      {
+        "birthYear": 1997,
+        "female": 5.345095,
+        "male": 5.811964,
+        "gapMaleMinusFemale": 0.466869
+      },
+      {
+        "birthYear": 1998,
+        "female": 5.336227,
+        "male": 5.82572,
+        "gapMaleMinusFemale": 0.489493
+      },
+      {
+        "birthYear": 1999,
+        "female": 5.327635,
+        "male": 5.840808,
+        "gapMaleMinusFemale": 0.513173
+      },
+      {
+        "birthYear": 2000,
+        "female": 5.319294,
+        "male": 5.857128,
+        "gapMaleMinusFemale": 0.537834
+      },
+      {
+        "birthYear": 2001,
+        "female": 5.3112,
+        "male": 5.874666,
+        "gapMaleMinusFemale": 0.563466
+      },
+      {
+        "birthYear": 2002,
+        "female": 5.30335,
+        "male": 5.893424,
+        "gapMaleMinusFemale": 0.590074
+      },
+      {
+        "birthYear": 2003,
+        "female": 5.295743,
+        "male": 5.913403,
+        "gapMaleMinusFemale": 0.61766
+      },
+      {
+        "birthYear": 2004,
+        "female": 5.288376,
+        "male": 5.934604,
+        "gapMaleMinusFemale": 0.646228
+      },
+      {
+        "birthYear": 2005,
+        "female": 5.281248,
+        "male": 5.957028,
+        "gapMaleMinusFemale": 0.67578
+      }
+    ]
+  }
+}
