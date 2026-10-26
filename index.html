@@ -458,6 +458,46 @@
       justify-content: space-between;
     }
 
+    .project-recognition {
+      margin: 22px 0 20px;
+      padding: 17px 18px 18px;
+      border-left: 4px solid var(--rust);
+      background: rgba(33, 91, 85, 0.065);
+      border-radius: 0 12px 12px 0;
+    }
+    .project-recognition-label {
+      display: block;
+      margin-bottom: 9px;
+      color: var(--green);
+      font: 600 0.66rem/1.5 "IBM Plex Mono", monospace;
+      text-transform: uppercase;
+      letter-spacing: .045em;
+    }
+    .project-recognition strong {
+      display: block;
+      font: 400 clamp(1.42rem, 2.4vw, 1.85rem)/1.1 "Instrument Serif", Georgia, serif;
+      letter-spacing: -.02em;
+    }
+    .project-recognition p {
+      margin: 11px 0 0;
+      font-size: .92rem;
+      line-height: 1.55;
+      color: #353d3b;
+    }
+    .project-recognition-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 15px;
+      margin-top: 14px;
+      font: 600 .72rem/1.5 "IBM Plex Mono", monospace;
+    }
+    .project-recognition-links a {
+      border-bottom: 1px solid var(--rust);
+      padding-bottom: 3px;
+      color: #7b3c28;
+    }
+    .project-recognition-links a:hover { color: var(--ink); }
+
     .project-kicker {
       font: 500 0.76rem/1.5 "IBM Plex Mono", monospace;
       text-transform: uppercase;
@@ -1139,6 +1179,15 @@
                 <div class="project-kicker" data-i18n="p2Kicker">Domanda ferroviaria nel Meratese · 2026</div>
                 <h3 data-i18n="p2Title">Analisi S8 Milano-Lecco</h3>
                 <p data-i18n="p2Copy">I passeggeri della S8 sono esplosi oltre i livelli del 2019 e il Meratese è il centro di questa crescita. Ho ricostruito dieci anni di flussi per mostrare quali stazioni stanno trainando la domanda e cosa implica per il servizio.</p>
+                <div class="project-recognition">
+                  <span class="project-recognition-label" data-i18n="p2RecognitionLabel">Ricerca · Consiglio regionale della Lombardia</span>
+                  <strong data-i18n="p2RecognitionTitle">La mia analisi S8 citata in Consiglio regionale</strong>
+                  <p data-i18n="p2RecognitionCopy">Presentata a Merate il 7 maggio 2026, la ricerca è richiamata dall'ODG 3184 del 12 ottobre, che menziona espressamente uno studio pubblicato quel giorno sui dati S8 del 2019–2025. Già l'ODG 2329 di luglio riportava dati discussi durante la presentazione.</p>
+                  <div class="project-recognition-links">
+                    <a href="https://gedasi.consiglio.regione.lombardia.it/dasi/public/fe88d07b-5f83-4546-8a51-6b37fbdd4334/pdf" target="_blank" rel="noopener noreferrer" data-i18n="p2RecognitionOct">ODG 3184 · ottobre ↗</a>
+                    <a href="https://www.consiglio.regione.lombardia.it/wps/portal/crl/home/leggi-e-banche-dati/Atti-di-indirizzo-e-controllo/Dettaglio-atto-di-indirizzo-e-controllo?tipoatto=ODG&amp;numeroatto=2329&amp;idlegislatura=33&amp;uid=4ef17e59-d54d-4464-98fd-06a7de19843a" target="_blank" rel="noopener noreferrer" data-i18n="p2RecognitionJul">ODG 2329 · luglio ↗</a>
+                  </div>
+                </div>
                 <dl class="project-meta">
                   <div><dt data-i18n="metaRole">Responsabilità</dt><dd data-i18n="p2Role">Progetto indipendente: domanda di ricerca, raccolta e validazione dei dati, analisi, visualizzazioni, testo e pubblicazione.</dd></div>
                   <div><dt data-i18n="metaMethod">Metodo</dt><dd data-i18n="p2Method">Dati di Regione Lombardia, confronti temporali, bacini potenziali e script riproducibili.</dd></div>
@@ -1363,6 +1412,11 @@
         p1Alt: "Mappa comunale dell'affluenza elettorale in cinque fasce quantili nell'atlante Electio",
         p1Caption: "Affluenza alla Camera 2022, comune per comune: il primo tassello di un atlante progettato per coprire tutte le elezioni italiane.",
         p1Open: "Ingrandisci la visualizzazione di Electio",
+        p2RecognitionLabel: "Ricerca · Consiglio regionale della Lombardia",
+        p2RecognitionTitle: "La mia analisi S8 citata in Consiglio regionale",
+        p2RecognitionCopy: "Presentata a Merate il 7 maggio 2026, la ricerca è richiamata dall'ODG 3184 del 12 ottobre, che menziona espressamente uno studio pubblicato quel giorno sui dati S8 del 2019–2025. Già l'ODG 2329 di luglio riportava dati discussi durante la presentazione.",
+        p2RecognitionOct: "ODG 3184 · ottobre ↗",
+        p2RecognitionJul: "ODG 2329 · luglio ↗",
         p2Kicker: "Domanda ferroviaria nel Meratese · 2026",
         p2Title: "Analisi S8 Milano–Lecco",
         p2Copy: "I passeggeri della S8 sono esplosi oltre i livelli del 2019 e il Meratese è il centro di questa crescita. Ho ricostruito dieci anni di flussi per mostrare quali stazioni stanno trainando la domanda e cosa implica per il servizio.",
@@ -1491,6 +1545,11 @@
         p1Alt: "Municipal turnout map using five quantile classes in the Electio atlas",
         p1Caption: "Turnout in the 2022 Chamber election, municipality by municipality: the first building block of an atlas designed to cover every Italian election.",
         p1Open: "Expand the Electio visualisation",
+        p2RecognitionLabel: "Research · Lombardy Regional Council",
+        p2RecognitionTitle: "My S8 research cited in the Regional Council",
+        p2RecognitionCopy: "Presented in Merate on 7 May 2026, the research was referenced in ODG 3184 of 12 October, which explicitly mentioned a study published that day on S8 data from 2019–2025. ODG 2329 in July had already included figures discussed at the public presentation.",
+        p2RecognitionOct: "ODG 3184 · October ↗",
+        p2RecognitionJul: "ODG 2329 · July ↗",
         p2Kicker: "Rail demand in the Meratese area · 2026",
         p2Title: "S8 Milan–Lecco analysis",
         p2Copy: "S8 ridership has surged beyond 2019 levels, with the Meratese area at the centre of that growth. I reconstructed ten years of passenger flows to show which stations are driving demand and what that means for service planning.",
