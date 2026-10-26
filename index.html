@@ -458,172 +458,128 @@
       justify-content: space-between;
     }
 
-    /* S8, evidenza editoriale sulla circolazione istituzionale della ricerca */
+    /* S8: risultati e citazioni istituzionali in un'unica composizione */
+    .s8-keyfigures {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin: 23px 0 20px;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding: 14px 0;
+    }
+    .s8-keyfigures > div {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .s8-keyfigures > div + div { border-left: 1px solid var(--rule-soft); padding-left: 10px; }
+    .s8-keyfigures strong {
+      font: 400 clamp(1.3rem, 2.35vw, 2rem)/1 "Instrument Serif", Georgia, serif;
+      letter-spacing: -.04em;
+      color: var(--green);
+      white-space: nowrap;
+    }
+    .s8-keyfigures span {
+      font-size: .7rem;
+      line-height: 1.36;
+      color: var(--muted);
+    }
     .project-recognition {
-      margin: 28px 5px 26px 0;
-      padding: 23px 23px 24px;
       position: relative;
       overflow: hidden;
-      isolation: isolate;
-      border: 1px solid rgba(19, 67, 61, .8);
-      border-radius: 5px 27px 5px 5px;
-      color: #f8f3e8;
-      background:
-        radial-gradient(circle at 98% 1%, rgba(237, 170, 143, .18), transparent 37%),
-        linear-gradient(142deg, #123d38 0%, #1b4a43 45%, #173b37 100%);
-      box-shadow: 8px 9px 0 rgba(155, 79, 55, .14);
+      padding: 20px 22px 21px;
+      margin: 10px 2px 17px 0;
+      border-radius: 3px 19px 3px 3px;
+      background: #17453f;
+      color: #fffaf2;
+      box-shadow: 5px 6px 0 rgba(155, 79, 55, .12);
     }
     .project-recognition::before {
       content: "";
       position: absolute;
-      inset: 0 auto 0 0;
-      width: 5px;
-      background: #e5a18b;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 4px;
+      background: #f1b7a3;
     }
-    .recognition-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 15px;
-    }
-    .project-recognition-label {
-      display: inline-block;
-      max-width: 25ch;
-      color: #f1cab9;
-      font: 600 .67rem/1.5 "IBM Plex Mono", monospace;
-      letter-spacing: .065em;
-      text-transform: uppercase;
-    }
-    .recognition-count {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      flex: 0 0 auto;
-      color: #f6d2c6;
-      font-family: "IBM Plex Mono", monospace;
-      line-height: 1;
-    }
-    .recognition-count b {
-      font: 400 2.45rem/.85 "Instrument Serif", Georgia, serif;
-      letter-spacing: -.05em;
-    }
-    .recognition-count span {
-      font-size: .57rem;
-      letter-spacing: .12em;
-      margin-top: 8px;
-      font-weight: 600;
-    }
-    .project-recognition h4 {
-      margin: 0;
-      max-width: 18ch;
-      font: 400 clamp(2.1rem, 3.35vw, 3rem)/.98 "Instrument Serif", Georgia, serif;
-      letter-spacing: -.035em;
-      text-wrap: balance;
-      color: #fffaf2;
-    }
-    .recognition-title-highlight {
-      display: block;
-      color: #f2b4a3;
-      margin-top: 5px;
-    }
-    .recognition-author {
+    .recognition-identity {
       display: flex;
       align-items: center;
-      gap: 11px;
-      padding: 18px 0 0;
-      margin-top: 17px;
-      border-top: 1px solid rgba(255, 255, 255, .26);
+      gap: 10px;
+      color: #f2c3b3;
+      font: 600 .67rem/1.5 "IBM Plex Mono", monospace;
+      text-transform: uppercase;
+      letter-spacing: .02em;
     }
-    .recognition-monogram {
+    .recognition-identity-mark {
       display: grid;
       place-items: center;
-      width: 41px;
-      height: 41px;
-      flex: 0 0 41px;
+      width: 32px;
+      height: 32px;
+      flex: 0 0 32px;
       border-radius: 50%;
-      background: #e9b0a1;
-      color: #153f39;
-      font: 700 .68rem/1 "IBM Plex Mono", monospace;
-      letter-spacing: .05em;
+      background: #f1b7a3;
+      color: #173d38;
+      font: 700 .57rem/1 "IBM Plex Mono", monospace;
     }
-    .recognition-author-details {
-      display: grid;
-      gap: 1px;
-    }
-    .recognition-author-details > span {
-      color: #d8e9e0;
-      font-size: .73rem;
-      line-height: 1.4;
-    }
-    .recognition-author-details strong {
+    .project-recognition h4 {
+      margin: 14px 0 0;
+      font: 400 clamp(1.85rem, 3.2vw, 2.35rem)/1.03 "Instrument Serif", Georgia, serif;
       color: #fffaf2;
-      font: 600 .94rem/1.4 "IBM Plex Sans", Arial, sans-serif;
+      letter-spacing: -.03em;
+      text-wrap: balance;
     }
     .project-copy .project-recognition-body {
-      margin: 19px 0 0;
-      font-size: .91rem;
-      line-height: 1.65;
-      color: #e5eee9;
-      max-width: 63ch;
-    }
-    .recognition-sources-head {
-      margin-top: 23px;
-      color: #f1cab9;
-      font: 600 .68rem/1.5 "IBM Plex Mono", monospace;
-      letter-spacing: .06em;
-      text-transform: uppercase;
+      margin: 10px 0 0;
+      color: #e1ece8;
+      font-size: .88rem;
+      line-height: 1.58;
     }
     .project-recognition-sources {
-      margin-top: 6px;
-      border-top: 1px solid rgba(255, 255, 255, .28);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      margin-top: 15px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,.22);
     }
-    .project-recognition-source {
-      display: grid;
-      grid-template-columns: 83px minmax(0, 1fr) 18px;
-      align-items: baseline;
+    .project-recognition-sources a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      color: #ffd0bd;
+      font: 600 .74rem/1.4 "IBM Plex Mono", monospace;
+      text-decoration: underline;
+      text-decoration-color: rgba(255,208,189,.4);
+      text-underline-offset: 4px;
+    }
+    .project-recognition-sources a:hover { color: #fff; text-decoration-color: #fff; }
+    .project-recognition-sources a:focus-visible { outline: 2px solid #f1b7a3; }
+    .project-copy .s8-method-note {
+      display: flex;
       gap: 10px;
-      min-height: 44px;
-      padding: 11px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, .2);
-      transition: background .15s ease, padding .15s ease;
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: .76rem;
+      line-height: 1.5;
     }
-    .project-recognition-source:hover {
-      background: rgba(255,255,255,.075);
-      padding-left: 6px;
-      padding-right: 6px;
-    }
-    .project-recognition-source:focus-visible {
-      outline: 2px solid #f4b6a3;
-      outline-offset: 3px;
-    }
-    .project-recognition .source-date {
-      color: #c4ddd5;
-      font: 600 .62rem/1.45 "IBM Plex Mono", monospace;
+    .s8-method-note strong {
+      color: var(--rust);
+      font: 600 .71rem/1.55 "IBM Plex Mono", monospace;
+      text-transform: uppercase;
       white-space: nowrap;
     }
-    .project-recognition .source-title {
-      color: #fffaf2;
-      font-size: .79rem;
-      font-weight: 600;
-      line-height: 1.4;
+    @media (max-width: 540px) {
+      .s8-keyfigures { gap: 6px; }
+      .s8-keyfigures strong { font-size: clamp(1.26rem, 6vw, 1.7rem); }
+      .s8-keyfigures span { font-size: .66rem; }
+      .project-recognition { padding: 17px 17px 19px; }
+      .project-recognition h4 { font-size: clamp(1.9rem, 8vw, 2.3rem); }
+      .project-copy .s8-method-note { flex-direction: column; gap: 2px; }
     }
-    .project-recognition .source-arrow {
-      color: #f4b6a3;
-      text-align: right;
-    }
-    @media (max-width: 520px) {
-      .project-recognition { padding: 19px 18px 20px; margin-right: 7px; }
-      .project-recognition h4 { font-size: clamp(2.2rem, 8.4vw, 2.75rem); }
-      .project-recognition-source { grid-template-columns: 1fr 18px; row-gap: 2px; }
-      .project-recognition .source-date { grid-column: 1 / -1; }
-      .project-recognition .source-title { grid-column: 1; }
-      .project-recognition .source-arrow { grid-column: 2; grid-row: 2; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .project-recognition-source { transition: none; }
-    }
-
     .project-kicker {
       font: 500 0.76rem/1.5 "IBM Plex Mono", monospace;
       text-transform: uppercase;
@@ -1302,45 +1258,27 @@
           <article class="project">
             <div class="project-copy">
               <div>
-                <div class="project-kicker" data-i18n="p2Kicker">S8 Milano–Lecco · Ricerca indipendente · 2026</div>
+                <div class="project-kicker" data-i18n="p2Kicker">Mobilità ferroviaria · Open data · 2026</div>
                 <h3 data-i18n="p2Title">Analisi S8 Milano-Lecco</h3>
-                <p data-i18n="p2Copy">Ho ricostruito l'evoluzione della domanda ferroviaria sulla S8 e nelle stazioni del Meratese attraverso dieci anni di dati regionali, documentando la crescita del servizio e le sue implicazioni per la programmazione della mobilità.</p>
+                <p data-i18n="p2Copy">Ho analizzato l'evoluzione dei flussi ferroviari sulla S8 e nelle stazioni del Meratese, con dati e visualizzazioni per leggere la crescita della domanda e le implicazioni per il servizio.</p>
+
+                <div class="s8-keyfigures" aria-label="Principali risultati della ricerca">
+                  <div><strong>+57,7%</strong><span data-i18n="p2FigureOne">passeggeri feriali rispetto al 2019</span></div>
+                  <div><strong>14,8 mln</strong><span data-i18n="p2FigureTwo">passeggeri annui stimati</span></div>
+                  <div><strong>+94,4%</strong><span data-i18n="p2FigureThree">nelle quattro stazioni del Meratese</span></div>
+                </div>
+
                 <aside class="project-recognition" aria-labelledby="s8-institutional-title">
-                  <div class="recognition-top">
-                    <span class="project-recognition-label" data-i18n="p2RecognitionLabel">Dalla ricerca alle istituzioni</span>
-                    <span class="recognition-count" aria-label="Due ordini del giorno"><b>02</b><span data-i18n="p2RecognitionCount">ATTI</span></span>
-                  </div>
-                  <h4 id="s8-institutional-title">
-                    <span data-i18n="p2RecognitionTitle">La mia analisi S8.</span>
-                    <span class="recognition-title-highlight" data-i18n="p2RecognitionHighlight">Citata in Consiglio regionale.</span>
-                  </h4>
-                  <div class="recognition-author">
-                    <span class="recognition-monogram" aria-hidden="true">SGC</span>
-                    <span class="recognition-author-details">
-                      <span data-i18n="p2RecognitionAuthorLabel">Ricerca indipendente di</span>
-                      <strong>Simone Ghezzi Colombo</strong>
-                    </span>
-                  </div>
-                  <p class="project-recognition-body" data-i18n="p2RecognitionCopy">Il 7 maggio 2026 ho presentato a Merate la mia ricerca sui flussi S8 del 2019–2025. L'ODG 3184 richiama espressamente un'analisi pubblicata proprio quel giorno sugli stessi temi. Già a luglio l'ODG 2329 riportava i dati sui 51.000 viaggiatori feriali e sul rilievo della linea nel confronto nazionale.</p>
-                  <div class="recognition-sources-head" data-i18n="p2RecognitionSources">I documenti ufficiali</div>
-                  <div class="project-recognition-sources">
-                    <a class="project-recognition-source" href="https://gedasi.consiglio.regione.lombardia.it/dasi/public/fe88d07b-5f83-4546-8a51-6b37fbdd4334/pdf" target="_blank" rel="noopener noreferrer" aria-label="ODG 3184, potenziamento della S8, ottobre 2026">
-                      <span class="source-date" data-i18n="p2RecognitionOctDate">12 OTT 2026</span>
-                      <span class="source-title" data-i18n="p2RecognitionOct">ODG 3184 · Potenziamento S8</span>
-                      <span class="source-arrow" aria-hidden="true">↗</span>
-                    </a>
-                    <a class="project-recognition-source" href="https://gedasi.consiglio.regione.lombardia.it/dasi/public/0fca6f01-4c2d-4ae8-958d-eafe6992efc8" target="_blank" rel="noopener noreferrer" aria-label="ODG 2329, posto di comunicazione a Olgiate Molgora, luglio 2026">
-                      <span class="source-date" data-i18n="p2RecognitionJulDate">16 LUG 2026</span>
-                      <span class="source-title" data-i18n="p2RecognitionJul">ODG 2329 · Scambio di Olgiate</span>
-                      <span class="source-arrow" aria-hidden="true">↗</span>
-                    </a>
+                  <div class="recognition-identity"><span class="recognition-identity-mark" aria-hidden="true">SGC</span><span data-i18n="p2RecognitionLabel">Ricerca di Simone Ghezzi Colombo</span></div>
+                  <h4 id="s8-institutional-title" data-i18n="p2RecognitionTitle">Citata in Consiglio regionale.</h4>
+                  <p class="project-recognition-body" data-i18n="p2RecognitionCopy">Presentata a Merate il 7 maggio 2026, la ricerca è richiamata nell'ODG 3184, che menziona un'analisi pubblicata proprio quel giorno. L'ODG 2329 riporta inoltre dati sulla crescita della S8.</p>
+                  <div class="project-recognition-sources" aria-label="Atti ufficiali del Consiglio regionale">
+                    <a href="https://gedasi.consiglio.regione.lombardia.it/dasi/public/fe88d07b-5f83-4546-8a51-6b37fbdd4334/pdf" target="_blank" rel="noopener noreferrer" data-i18n="p2RecognitionOct">ODG 3184 · 12 ottobre ↗</a>
+                    <a href="https://gedasi.consiglio.regione.lombardia.it/dasi/public/0fca6f01-4c2d-4ae8-958d-eafe6992efc8" target="_blank" rel="noopener noreferrer" data-i18n="p2RecognitionJul">ODG 2329 · 16 luglio ↗</a>
                   </div>
                 </aside>
-                <dl class="project-meta">
-                  <div><dt data-i18n="metaRole">Responsabilità</dt><dd data-i18n="p2Role">Progetto indipendente: domanda di ricerca, raccolta e validazione dei dati, analisi, visualizzazioni, testo e pubblicazione.</dd></div>
-                  <div><dt data-i18n="metaMethod">Metodo</dt><dd data-i18n="p2Method">Dati di Regione Lombardia, confronti temporali, bacini potenziali e script riproducibili.</dd></div>
-                  <div><dt data-i18n="metaResult">Risultato</dt><dd data-i18n="p2Result">14,8 milioni di passeggeri annui stimati; +57,7% sul 2019. Nelle quattro stazioni del Meratese la crescita arriva al +94,4%.</dd></div>
-                </dl>
+
+                <p class="s8-method-note"><strong data-i18n="metaMethod">Metodo</strong><span data-i18n="p2Method">Dati di Regione Lombardia, confronti temporali, bacini potenziali e script riproducibili.</span></p>
               </div>
               <div class="project-links">
                 <a href="https://github.com/simoneghezzicolombo/s8-analisi" target="_blank" rel="noreferrer">GitHub ↗</a>
@@ -1560,23 +1498,20 @@
         p1Alt: "Mappa comunale dell'affluenza elettorale in cinque fasce quantili nell'atlante Electio",
         p1Caption: "Affluenza alla Camera 2022, comune per comune: il primo tassello di un atlante progettato per coprire tutte le elezioni italiane.",
         p1Open: "Ingrandisci la visualizzazione di Electio",
-        p2RecognitionLabel: "Dalla ricerca alle istituzioni",
-        p2RecognitionCount: "ATTI",
-        p2RecognitionTitle: "La mia analisi S8.",
-        p2RecognitionHighlight: "Citata in Consiglio regionale.",
-        p2RecognitionAuthorLabel: "Ricerca indipendente di",
-        p2RecognitionSources: "I documenti ufficiali",
-        p2RecognitionCopy: "Il 7 maggio 2026 ho presentato a Merate la mia ricerca sui flussi S8 del 2019–2025. L'ODG 3184 richiama espressamente un'analisi pubblicata proprio quel giorno sugli stessi temi. Già a luglio l'ODG 2329 riportava i dati sui 51.000 viaggiatori feriali e sul rilievo della linea nel confronto nazionale.",
-        p2RecognitionOctDate: "12 OTT 2026",
-        p2RecognitionJulDate: "16 LUG 2026",
-        p2RecognitionOct: "ODG 3184 · Potenziamento S8",
-        p2RecognitionJul: "ODG 2329 · Scambio di Olgiate",
-        p2Kicker: "S8 Milano–Lecco · Ricerca indipendente · 2026",
+        p2Kicker: "Mobilità ferroviaria · Open data · 2026",
+        p2Copy: "Ho analizzato l'evoluzione dei flussi ferroviari sulla S8 e nelle stazioni del Meratese, con dati e visualizzazioni per leggere la crescita della domanda e le implicazioni per il servizio.",
+        p2FigureOne: "passeggeri feriali rispetto al 2019",
+        p2FigureTwo: "passeggeri annui stimati",
+        p2FigureThree: "nelle quattro stazioni del Meratese",
+        p2RecognitionLabel: "Ricerca di Simone Ghezzi Colombo",
+        p2RecognitionTitle: "Citata in Consiglio regionale.",
+        p2RecognitionCopy: "Presentata a Merate il 7 maggio 2026, la ricerca è richiamata nell'ODG 3184, che menziona un'analisi pubblicata proprio quel giorno. L'ODG 2329 riporta inoltre dati sulla crescita della S8.",
+        p2RecognitionOct: "ODG 3184 · 12 ottobre ↗",
+        p2RecognitionJul: "ODG 2329 · 16 luglio ↗",
         p2Title: "Analisi S8 Milano–Lecco",
-        p2Copy: "Ho ricostruito l'evoluzione della domanda ferroviaria sulla S8 e nelle stazioni del Meratese attraverso dieci anni di dati regionali, documentando la crescita del servizio e le sue implicazioni per la programmazione della mobilità.",
-        p2Role: "Progetto indipendente: domanda di ricerca, raccolta e validazione dei dati, analisi, visualizzazioni, testo e pubblicazione.",
+
         p2Method: "Dati di Regione Lombardia, confronti temporali, bacini potenziali e script riproducibili.",
-        p2Result: "14,8 milioni di passeggeri annui stimati; +57,7% sul 2019. Nelle quattro stazioni del Meratese la crescita arriva al +94,4%.",
+
         p2Image: "assets/project-s8.webp",
         p2Alt: "Grafico dei passeggeri nelle stazioni S8 dal 2015 al 2025, con le stazioni del Meratese in forte crescita",
         p2Caption: "Passeggeri nelle stazioni S8, 2015–2025 (2019=100). Dal 2022 la crescita accelera soprattutto nel Meratese: Airuno e Osnago più che raddoppiano.",
@@ -1699,23 +1634,20 @@
         p1Alt: "Municipal turnout map using five quantile classes in the Electio atlas",
         p1Caption: "Turnout in the 2022 Chamber election, municipality by municipality: the first building block of an atlas designed to cover every Italian election.",
         p1Open: "Expand the Electio visualisation",
-        p2RecognitionLabel: "From research to institutions",
-        p2RecognitionCount: "RECORDS",
-        p2RecognitionTitle: "My S8 research.",
-        p2RecognitionHighlight: "Cited in the Regional Council.",
-        p2RecognitionAuthorLabel: "Independent research by",
-        p2RecognitionSources: "Official Council records",
-        p2RecognitionCopy: "On 7 May 2026 I presented my research on S8 passenger flows from 2019–2025 in Merate. ODG 3184 explicitly refers to an analysis published on that very date on the same topics. In July, ODG 2329 had already included figures on 51,000 weekday passengers and the line’s position in national comparisons.",
-        p2RecognitionOctDate: "12 OCT 2026",
-        p2RecognitionJulDate: "16 JUL 2026",
-        p2RecognitionOct: "ODG 3184 · S8 service enhancement",
-        p2RecognitionJul: "ODG 2329 · Olgiate rail crossover",
-        p2Kicker: "S8 Milan–Lecco · Independent research · 2026",
+        p2Kicker: "Rail mobility · Open data · 2026",
+        p2Copy: "I analysed trends in passenger demand on the S8 railway and at stations in the Meratese area, using data and visualisations to show how demand has grown and what this means for service planning.",
+        p2FigureOne: "weekday passengers vs 2019",
+        p2FigureTwo: "estimated annual passengers",
+        p2FigureThree: "across four Meratese stations",
+        p2RecognitionLabel: "Research by Simone Ghezzi Colombo",
+        p2RecognitionTitle: "Cited in the Regional Council.",
+        p2RecognitionCopy: "Presented in Merate on 7 May 2026, the research is referenced in ODG 3184, which mentions an analysis published on that very date. ODG 2329 also includes figures on growing S8 demand.",
+        p2RecognitionOct: "ODG 3184 · 12 October ↗",
+        p2RecognitionJul: "ODG 2329 · 16 July ↗",
         p2Title: "S8 Milan–Lecco analysis",
-        p2Copy: "I reconstructed trends in rail demand on the S8 line and at stations in the Meratese area using ten years of regional data, documenting passenger growth and its implications for transport planning.",
-        p2Role: "Independent project: research question, data collection and validation, analysis, visualisation, writing and publication.",
+
         p2Method: "Regione Lombardia data, temporal comparisons, potential catchments and reproducible scripts.",
-        p2Result: "An estimated 14.8 million annual passengers; +57.7% versus 2019. Across the four Meratese stations, growth reaches +94.4%.",
+
         p2Image: "assets/project-s8-en.webp",
         p2Alt: "Chart of passengers at S8 stations from 2015 to 2025, with strong growth at Meratese stations",
         p2Caption: "Passengers at S8 stations, 2015–2025 (2019=100). Growth accelerates after 2022, especially in the Meratese area: Airuno and Osnago more than double.",
