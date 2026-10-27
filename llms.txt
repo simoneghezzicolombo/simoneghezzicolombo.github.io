@@ -1,0 +1,14 @@
+# Simone Ghezzi Colombo
+
+> Ricerca sociale, dati pubblici e strumenti per elezioni, mobilità e scuola di Simone Ghezzi Colombo, sociologo e dottorando ASEP all'Università di Milano-Bicocca.
+
+## Public pages
+
+- [Simone Ghezzi Colombo | Sociologia, dati e politiche pubbliche](https://simoneghezzicolombo.github.io/): Sociologo e dottorando ASEP a Milano-Bicocca. Progetti su elezioni italiane, S8 Milano-Lecco, scuole superiori e polarizzazione politica di genere nella Gen Z europea.
+- [Public research projects](https://simoneghezzicolombo.github.io/progetti/): An HTML directory of the six active public research sites, their datasets and methods.
+- [Academic CV in Italian](https://simoneghezzicolombo.github.io/cv-it.pdf): Academic education, research, projects and civic experience.
+- [Academic CV in English](https://simoneghezzicolombo.github.io/cv.pdf): Academic education, research, projects and civic experience.
+
+## Attribution and interpretation
+
+Author: Simone Ghezzi Colombo. Cite the relevant page and the original data sources. These are independent research projects, not official institutional services.

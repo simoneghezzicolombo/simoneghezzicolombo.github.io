@@ -1,0 +1,28 @@
+{
+  "name": "Simone Ghezzi Colombo",
+  "url": "https://simoneghezzicolombo.github.io/",
+  "description": "Ricerca sociale, dati pubblici e strumenti per elezioni, mobilità e scuola di Simone Ghezzi Colombo, sociologo e dottorando ASEP all'Università di Milano-Bicocca.",
+  "published": "2026-10-27",
+  "languages": ["it", "en"],
+  "image": "assets/social-preview.jpg",
+  "translate": {"kind": "portfolio", "source": "index.html"},
+  "pages": [{
+    "path": "index.html", "url": "", "localized": true, "type": "ProfilePage",
+    "title": "Simone Ghezzi Colombo | Sociologia, dati e politiche pubbliche",
+    "title_en": "Simone Ghezzi Colombo | Sociology, data and public policy",
+    "description": "Sociologo e dottorando ASEP a Milano-Bicocca. Progetti su elezioni italiane, S8 Milano-Lecco, scuole superiori e polarizzazione politica di genere nella Gen Z europea.",
+    "description_en": "Sociologist and ASEP PhD student at Milano-Bicocca. Research on Italian elections, the S8 rail line, school outcomes and gendered political polarization among Gen Z in the EU."
+  }],
+  "extra_urls": ["progetti/", "cv-it.pdf", "cv.pdf"],
+  "sitemap_index": [
+    "https://simoneghezzicolombo.github.io/genz-gender-political-polarization/sitemap.xml",
+    "https://simoneghezzicolombo.github.io/s8-analisi/sitemap.xml",
+    "https://simoneghezzicolombo.github.io/indice-territoriale-scuole-superiori/sitemap.xml",
+    "https://simoneghezzicolombo.github.io/tpl-olgiate-intercomunale/sitemap.xml"
+  ],
+  "resources": [
+    {"name": "Public research projects", "url": "progetti/", "description": "An HTML directory of the six active public research sites, their datasets and methods."},
+    {"name": "Academic CV in Italian", "url": "cv-it.pdf", "description": "Academic education, research, projects and civic experience."},
+    {"name": "Academic CV in English", "url": "cv.pdf", "description": "Academic education, research, projects and civic experience."}
+  ]
+}
